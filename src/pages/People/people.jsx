@@ -1,9 +1,9 @@
 
 
-export const AboutUs = () => {
+export const People = () => {
     return (
         <>  
-
+            
         </>
     )
 }

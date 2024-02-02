@@ -1,9 +1,9 @@
 
 
-export const ContactUs = () => {
+export const Profile = () => {
     return (
         <>  
-            
+
         </>
     )
 }
