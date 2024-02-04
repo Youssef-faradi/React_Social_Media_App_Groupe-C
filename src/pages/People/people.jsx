@@ -2,6 +2,7 @@ import { useState } from "react";
 import zakaria from "../../assets/images/Picsart_22-12-18_00-49-44-927.png";
 
 export const People = () => {
+<<<<<<< HEAD
 
 
     const [MyPoeple, setMyPoeple] = useState([
@@ -246,3 +247,11 @@ export const People = () => {
     </>
   );
 };
+=======
+    return (
+        <>  
+            <h1>hello mate</h1>
+        </>
+    )
+}
+>>>>>>> 8acd7ff974fe27d2b2755a435c2a953801a97f35

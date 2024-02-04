@@ -7,10 +7,14 @@ export const FirstSectionHome = () => {
     return (
         <>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <h1>Hello World ;{}</h1>
 =======
             
 >>>>>>> ziko
+=======
+            <h1>hello world </h1>
+>>>>>>> 8acd7ff974fe27d2b2755a435c2a953801a97f35
         </>
     )
 }
