@@ -7,6 +7,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdEmojiEmotions } from "react-icons/md";
 import image from '../../../assets/images/homme1.avif'
 import image1 from '../../../assets/images/mosquéeHassan2.webp'
+import friend1 from '../../../assets/images/'
 
 import { GiPositionMarker } from "react-icons/gi";
 import { FaUniversity } from "react-icons/fa";
@@ -139,8 +140,8 @@ export const Section1Profile = () => {
                         {/* sous profil  */}
                         <div className=" w-100 rounded-lg mt-2 flex gap-3 ">
                             {/* divs gauche */}
-                            <div className="w-50 rounded-xl border bg-white h-screen mb-2">
-                                <div className="w-100 rounded-xl bg-slate-700 text-white pl-3 py-1">
+                            <div className="w-50 rounded-xl border h-screen mb-2 pb-4">
+                                <div className="w-100 rounded-xl bg-slate-700 text-white pl-3 py-1 mb-2">
                                     <p className="text-2xl pb-3">Intro</p>
                                     <div className="text-sm leading-normal mt-0  flex items-center text-white  mb-2 text-blueGray-400 font-bold uppercase">
                                         <GiPositionMarker className="mr-2" />
@@ -155,9 +156,56 @@ export const Section1Profile = () => {
                                         University of LionsGeek
                                     </div>
                                 </div>
+                                {/* picture div */}
+                                <div className="w-100 rounded-xl bg-slate-700 text-white py-2 pl-3 pr-2 mb-2 flex flex-col h-[40%]">
+                                    <p className="text-white text-3xl pb-2">Pictures</p>
+                                    <div className="flex flex-wrap gap-3 overflow-y-scroll  profilScroll h-[100%]">
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                        <div className="w-[30%]">
+                                            <img className="rounded-xl" src={image} alt="" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {/* friends div */}
+                                <div className="w-100 rounded-xl bg-slate-700 text-white py-2 pl-3 pr-2  mb-2 flex flex-col h-[37.5%]">
+                                    <p className="text-white text-3xl pb-2">Friends</p>
+                                    <div className="flex flex-wrap gap-3 overflow-y-scroll  profilScroll h-[100%]">
+
+
+                                    </div>
+
+                                </div>
+
                             </div>
                             {/* divs droite */}
-                            <div className="w-100 rounded-xl border bg-white h-screen overflow-y-scroll  profilScroll">
+                            <div className="w-100 rounded-xl border  h-screen overflow-y-scroll  profilScroll">
                                 <div className="w-100 rounded-xl bg-slate-700 mb-3">
                                     <div className="flex pl-8 pt-1  text-white py-3">
                                         <p className="m-0 pl-5 pt-3">Status</p>
@@ -210,7 +258,7 @@ export const Section1Profile = () => {
                                             <button>partager</button>
                                         </div>
                                     </div>
-                                    <div className=" w-100 flex flex-col items-center pt-2"> 
+                                    <div className=" w-100 flex flex-col items-center pt-2">
                                         <div className="flex  top-1/3 w-[90%] mb-2">
                                             {/* This is an example component */}
                                             <div className=" grid grid-cols-1 gap-4 p-2 mb-2 border rounded-lg bg-transparent shadow-lg w-[fit-content]">
@@ -238,7 +286,7 @@ export const Section1Profile = () => {
                                                 </p>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
 
                                 </div>
