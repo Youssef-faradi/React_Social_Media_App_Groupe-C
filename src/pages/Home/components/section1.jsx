@@ -6,7 +6,7 @@ export const FirstSectionHome = () => {
     const [dbUser, setDbUser, dbFriendship, setDbFriendship ,dbPost, setDbPost ,dbComments, setDbComments ,dbLikes, setDbLikes] = useContext(MyContext)
     return (
         <>
-            
+            <h1>hello world </h1>
         </>
     )
 }
