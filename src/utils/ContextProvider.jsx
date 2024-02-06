@@ -1,5 +1,11 @@
 import React, { createContext, useState } from "react"
+<<<<<<< HEAD
 import zakaria from "../assets/images/Picsart_22-12-18_00-49-44-927.png";
+=======
+import image from "../assets/images/profil.jpg"
+import image1 from "../assets/images/homme1.avif"
+
+>>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
 
 export const MyContext = createContext()
 
@@ -16,8 +22,13 @@ export const MyProvider = ({ children }) => {
             full_name: " zakaria",
             birthdate: "15/01/2000",
             registrationDate: "02/02/2024", 
+<<<<<<< HEAD
             location : "casablanca",
             picture : zakaria
+=======
+            location : " casablanca" ,
+            picture :image
+>>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
         },
         {
             userId: 0,
@@ -27,8 +38,13 @@ export const MyProvider = ({ children }) => {
             full_name: " achraf",
             birthdate: "17/01/2000",
             registrationDate: "15/09/2029", 
+<<<<<<< HEAD
             location : " casablanca",
             picture : zakaria
+=======
+            location : " casablanca" ,
+            picture :image
+>>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
         },
         {
             userId: 0,
@@ -39,7 +55,11 @@ export const MyProvider = ({ children }) => {
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
             location : " casablanca",
+<<<<<<< HEAD
             picture : zakaria
+=======
+            picture :image
+>>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
         },
         {
             userId: 0,
@@ -50,7 +70,11 @@ export const MyProvider = ({ children }) => {
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
             location : " casablanca",
+<<<<<<< HEAD
             picture : zakaria
+=======
+            picture :image
+>>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
         },
         {
             userId: 0,
@@ -61,6 +85,7 @@ export const MyProvider = ({ children }) => {
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
             location : " casablanca",
+<<<<<<< HEAD
             picture : zakaria
         },
 
@@ -111,6 +136,10 @@ export const MyProvider = ({ children }) => {
        
         
         
+=======
+            picture :image
+        }
+>>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
     ])
 
     // ^ Database of friendShip :
@@ -129,11 +158,27 @@ export const MyProvider = ({ children }) => {
     const [dbPost, setDbPost] = useState([
         {
             postId: 0,
-            userId: "=dbUserId 1 (number)",
+            userId: 0,
             content: "descreption du post 1",
             postDate: "01/01/2024",
             privacySetting: "( public, friends only, private)",
-            image: "URL Image 1"
+            image: image1
+        },
+        {
+            postId: 1,
+            userId: 0,
+            content: "descreption du post 2",
+            postDate: "02/02/2024",
+            privacySetting: "( public, friends only, private)",
+            image: image
+        },
+        {
+            postId: 1,
+            userId: 0,
+            content: "descreption du post 3",
+            postDate: "03/03/2024",
+            privacySetting: "( public, friends only, private)",
+            image: image1
         }
     ])
 
@@ -160,11 +205,62 @@ export const MyProvider = ({ children }) => {
         }
     ])
 
+    // ^^ Database of Market :
+
+    const [products, setProducts] = useState([
+
+        {
+            image: "productTest",
+            title: 'Jean ZARA',
+            price: 100500 
+        },
+        {
+            image: "productTest",
+            title: 'JEan kora',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'Jean morocco',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'Jean youssef',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'EEEEE',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'FFFFF',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'JJJJJ',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'HHHHH',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'IIIII',
+            price: 100500
+        }
+    ])
+
 
     return (
         <>
 
-            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes]} >
+            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes , products ,setProducts]} >
                 {children}
             </MyContext.Provider>
 
