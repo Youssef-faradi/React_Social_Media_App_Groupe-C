@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-import React, { createContext, useContext, useState } from 'react'
-import context from 'react-bootstrap/esm/AccordionContext';
+import React, { createContext, useState } from "react"
+import productTest from '../assets/images/1.1_1_.jpg';
 
-import productTest from '../assets/images/S0-modele--peugeot-205 (1).jpg';
+export const MyContext = createContext()
 
-
-export const    MyContext = createContext()
 
 export const MyProvider = ({ children }) => {
 
@@ -13,65 +10,59 @@ export const MyProvider = ({ children }) => {
 
         {
             image: productTest,
-            title: 'AAAAA',
-            price: 100500 
+            title: 'Jean ZARA',
+            price: 100500  ,
+            description : ''
         },
         {
             image: productTest,
-            title: 'BBBBB',
-            price: 100500
+            title: 'JEan kora',
+            price: 100500 ,
+            description : ''
         },
         {
             image: productTest,
-            title: 'CCCCC',
-            price: 100500
+            title: 'Jean morocco',
+            price: 100500 ,
+            description : ''
         },
         {
             image: productTest,
-            title: 'DDDDD',
-            price: 100500
+            title: 'Jean youssef',
+            price: 100500 ,
+            description : ''
         },
         {
             image: productTest,
             title: 'EEEEE',
-            price: 100500
+            price: 100500 ,
+            description : ''
         },
         {
             image: productTest,
             title: 'FFFFF',
-            price: 100500
+            price: 100500 ,
+            description : ''
         },
         {
             image: productTest,
             title: 'JJJJJ',
-            price: 100500
+            price: 100500 ,
+            description : ''
         },
         {
             image: productTest,
             title: 'HHHHH',
-            price: 100500
+            price: 100500 ,
+            description : ''
         },
         {
             image: productTest,
             title: 'IIIII',
-            price: 100500
+            price: 100500 ,
+            description : ''
         }
     ])
-
-    return (
-        <>
-            <MyContext.Provider value={ [products, setProducts] } >
-                {children}
-            </MyContext.Provider>
-        </>
-    )
-=======
-import React, { createContext, useState } from "react"
-
-
-export const MyContext = createContext()
-
-export const MyProvider = ({ children }) => {
 
     // ^ Database of users :
 
@@ -179,12 +170,11 @@ export const MyProvider = ({ children }) => {
     return (
         <>
 
-            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes]} >
+            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes , products, setProducts]} >
                 {children}
             </MyContext.Provider>
 
         </>
     )
 
->>>>>>> 2e007373d592a19b1577544ee7afac7870c32ad9
 }

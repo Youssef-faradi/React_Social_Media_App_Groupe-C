@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import './home.scss'
 
-import { MyContext } from "../../../utils/ContextProvider"
+import { MyContext } from "../../../utils/contextProvider"
 import React from "react";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { HiHome } from "react-icons/hi2";

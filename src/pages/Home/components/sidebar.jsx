@@ -1,5 +1,5 @@
 import React from 'react';
-import { MyContext } from "../../../utils/ContextProvider"
+import { MyContext } from "../../../utils/contextProvider"
 
 import { IoIosArrowDropdown, IoMdAdd } from "react-icons/io";
 import { FaSignOutAlt } from "react-icons/fa";
