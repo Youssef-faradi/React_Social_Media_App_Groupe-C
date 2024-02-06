@@ -6,10 +6,14 @@
     --teal: #08D9D6;
     --red: #FF2E63;
     --dark: #252A34;
-    --light: #eafffe ;
+    --light: #dcfcfb ;
     --green: #8bdddb;
     --lightGreen: #dff3f2;
 
 }
 
 
+@font-face {
+    font-family: taviraj;
+    src: url(./assets/fonts/Raleway-SemiBold.ttf);
+}

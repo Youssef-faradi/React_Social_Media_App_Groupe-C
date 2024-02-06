@@ -4,15 +4,16 @@ import './home.scss'
 import { MyContext } from "../../../utils/ContextProvider"
 import React from "react";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
-import { HiHome } from "react-icons/hi2";
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
-import { IoIosPeople } from "react-icons/io";
+import { IoIosArrowDropdown, IoIosPeople } from "react-icons/io";
 import { LuMessagesSquare } from "react-icons/lu";
 
 
 
 import { IoMdLogOut } from "react-icons/io";
+import { RiHome6Line } from "react-icons/ri";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
 
 export const NavbarSectionHome = () => {
     const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes] = useContext(MyContext)
@@ -50,20 +51,20 @@ export const NavbarSectionHome = () => {
                         </div>
                     </div>
                     <div className="max-[430px]:hidden   h-[80%] flex items-center  w-[55%] gap-5">
-                        <div className="p-2 bg-[--light] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <HiHome className="text-2xl" />
+                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+                            <RiHome6Line className="com text-2xl" />
                         </div>
-                        <div className="p-2 bg-[--light] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <IoIosPeople className="text-2xl" />
+                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+                            <IoIosPeople className="com text-2xl" />
                         </div>
-                        <div className="p-2 bg-[--light] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <IoStorefrontSharp className="text-2xl" />
+                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <HiOutlineShoppingCart className="com text-2xl" />
                         </div>
-                        <div className="p-2 bg-[--light] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <IoNotifications className="text-2xl" />
+                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <IoNotifications className="com text-2xl" />
                         </div>
-                        <div className="p-2 bg-[--light] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <LuMessagesSquare className="text-2xl" />
+                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <LuMessagesSquare className="com text-2xl" />
                         </div>
                         
                         
