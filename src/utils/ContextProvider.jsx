@@ -1,4 +1,6 @@
 import React, { createContext, useState } from "react"
+import image from "../assets/images/profil.jpg"
+import image1 from "../assets/images/homme1.avif"
 
 
 export const MyContext = createContext()
@@ -16,7 +18,8 @@ export const MyProvider = ({ children }) => {
             full_name: " full name user 1",
             birthdate: "15/01/2000",
             registrationDate: "02/02/2024", 
-            location : " casablanca"
+            location : " casablanca" ,
+            picture :image
         },
         {
             userId: 0,
@@ -26,7 +29,8 @@ export const MyProvider = ({ children }) => {
             full_name: " full name user 2",
             birthdate: "17/01/2000",
             registrationDate: "15/09/2029", 
-            location : " casablanca"
+            location : " casablanca" ,
+            picture :image
         },
         {
             userId: 0,
@@ -36,7 +40,8 @@ export const MyProvider = ({ children }) => {
             full_name: " full name user 3",
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
-            location : " casablanca"
+            location : " casablanca",
+            picture :image
         },
         {
             userId: 0,
@@ -46,7 +51,8 @@ export const MyProvider = ({ children }) => {
             full_name: " full name user 4",
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
-            location : " casablanca"
+            location : " casablanca",
+            picture :image
         },
         {
             userId: 0,
@@ -56,7 +62,8 @@ export const MyProvider = ({ children }) => {
             full_name: " full name user 5",
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
-            location : " casablanca"
+            location : " casablanca",
+            picture :image
         }
     ])
 
@@ -76,11 +83,27 @@ export const MyProvider = ({ children }) => {
     const [dbPost, setDbPost] = useState([
         {
             postId: 0,
-            userId: "=dbUserId 1 (number)",
+            userId: 0,
             content: "descreption du post 1",
             postDate: "01/01/2024",
             privacySetting: "( public, friends only, private)",
-            image: "URL Image 1"
+            image: image1
+        },
+        {
+            postId: 1,
+            userId: 0,
+            content: "descreption du post 2",
+            postDate: "02/02/2024",
+            privacySetting: "( public, friends only, private)",
+            image: image
+        },
+        {
+            postId: 1,
+            userId: 0,
+            content: "descreption du post 3",
+            postDate: "03/03/2024",
+            privacySetting: "( public, friends only, private)",
+            image: image1
         }
     ])
 
@@ -107,11 +130,62 @@ export const MyProvider = ({ children }) => {
         }
     ])
 
+    // ^^ Database of Market :
+
+    const [products, setProducts] = useState([
+
+        {
+            image: "productTest",
+            title: 'Jean ZARA',
+            price: 100500 
+        },
+        {
+            image: "productTest",
+            title: 'JEan kora',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'Jean morocco',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'Jean youssef',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'EEEEE',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'FFFFF',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'JJJJJ',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'HHHHH',
+            price: 100500
+        },
+        {
+            image: "productTest",
+            title: 'IIIII',
+            price: 100500
+        }
+    ])
+
 
     return (
         <>
 
-            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes]} >
+            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes , products ,setProducts]} >
                 {children}
             </MyContext.Provider>
 
