@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@heroicons/react": "^2.1.1",
     "@material-tailwind/react": "^2.1.8",
->>>>>>> 2e007373d592a19b1577544ee7afac7870c32ad9
     "@nextui-org/react": "^2.2.9",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
