@@ -5,11 +5,16 @@ import { Profile } from './pages/Profile/profile.jsx';
 import { Forme } from './pages/Forme/forme.jsx';
 import { Route, Routes } from 'react-router-dom';
 import { Error } from './pages/Errors/error.jsx';
+import { Product } from './pages/Products/product.jsx';
+import { MyProvider } from './utils/contextProvider.jsx';
 
+// import { MyProvider } from './utils/contextProvider.jsx';
 
 function App() {
     return (
         <>  
+        <MyProvider>
+
             <Routes>
                 <Route path='*' element={<Error/>} />
                 <Route path='/' element={<Home/>} />
@@ -17,12 +22,14 @@ function App() {
                 <Route path='/people' element={<People />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/form' element={<Forme />} />
-
-
-
+                <Route path='/product/:id' element={<Product/>} />
             </Routes>
+
+        </MyProvider>
         </>
     );
 }
 
 export default App;
+
+
