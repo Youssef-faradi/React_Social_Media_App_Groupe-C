@@ -7,6 +7,9 @@ import { Forme } from './pages/Forme/forme.jsx';
 import { Route, Routes } from 'react-router-dom';
 import { Error } from './pages/Errors/error.jsx';
 import { MyProvider } from './utils/ContextProvider.jsx';
+import { Events } from './pages/events/events.jsx';
+import { Events2 } from './pages/events2/events2.jsx';
+
 
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
                     <Route path='/profile' element={<Profile />} />
                     <Route path='/login' element={<LogIn />} />
                     <Route path='/form' element={<Forme />} />
+                    <Route path='/events' element ={< Events />}/> 
+                    <Route path='/events2' element ={< Events2 />}/>  
+ 
                 </Routes>
             </MyProvider>
         </>
