@@ -2,50 +2,160 @@ import { useContext, useState } from "react";
 import { MyContext } from "../../../utils/ContextProvider";
 import Card from 'react-bootstrap/Card';
 import "./section1.sass"
-import { FaUser } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { MdEmojiEmotions } from "react-icons/md";
 import image from '../../../assets/images/homme1.avif'
 import image1 from '../../../assets/images/mosquéeHassan2.webp'
 import friend from '../../../assets/images/profil.jpg'
+
+
+import { FaUser } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdEmojiEmotions } from "react-icons/md";
 import { AiOutlinePicture } from "react-icons/ai";
 import { PiVideoDuotone } from "react-icons/pi";
-
-
 import { GiPositionMarker } from "react-icons/gi";
 import { FaUniversity } from "react-icons/fa";
 import { RiLuggageDepositFill } from "react-icons/ri";
 import { AiOutlineEllipsis } from "react-icons/ai";
-
-
-
-
-
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegComment } from 'react-icons/fa';
 import { FaRetweet } from "react-icons/fa6";
 
+
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
 
 
 
 
 export const Section1Profile = () => {
-    const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes , products ,setProducts] = useContext(MyContext)
+    const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes, products, setProducts] = useContext(MyContext)
     const modal1 = useDisclosure();
     const modal2 = useDisclosure();
+    const modal3 = useDisclosure();
     const [inputImg, setInputImg] = useState()
+    const [descriptionImg, setDescriptionImg] = useState()
     const [inputVd, setInputVd] = useState()
-    // ********** input Image ******************
-
+    const [descriptionVd, setDescriptionVd] = useState()
+    const [inputStatus, setInputStatus] = useState()
+    const [chihaja, setChihaja] = useState()
+    // ^^ ********post  Image ******************
+    //  ******** input Image ******************
     const getFileImg = (event) => {
         setInputImg(URL.createObjectURL(event.target.files[0]))
-
     }
+    //  ******** post Image done ******************
+    const DoneImg = () => {
+        if (inputImg) {
+            const today = new Date();
+            let element = {
+                type: "image",
+                postId: dbPost.length,
+                userId: 0,
+                content: descriptionImg,
+                postDate: today.toLocaleDateString(),
+                privacySetting: "( public, friends only, private)",
+                image: inputImg
+            }
+            const table = [...dbPost];
+            table.unshift(element)
+            setDbPost(table)
+            setInputImg()
+            setDescriptionImg()
+
+        } else {
+            alert('upload a picture')
+        }
+    }
+    // const DescriptionImg=()=>{
+
+    // }
+    //  ******** post Image close X ******************
+    const CloseImg = () => {
+        setInputImg()
+    }
+
+
+
+
+    // ^^ ********post video ******************
+    //  ******** input vidoe ******************
     const getFileVd = (event) => {
         setInputVd(URL.createObjectURL(event.target.files[0]))
+    }
+    //  ******** post video done ******************
+    const DoneVd = () => {
+      if (inputVd) {
+        const today = new Date();
+        let element = {
+            type: "video",
+            postId: dbPost.length,
+            userId: 0,
+            content: descriptionVd,
+            postDate: today.toLocaleDateString(),
+            privacySetting: "( public, friends only, private)",
+            video: inputVd
+        }
+        const table = [...dbPost];
+        table.unshift(element)
+        setDbPost(table)
+        setInputVd()
+        setDescriptionVd()
+      }else{
+        alert("upload a video")
+      }
+    }
 
+    //  ******** post video close X ******************
+    const CloseVd = () => {
+        setInputVd()
+    }
+    // ^^ ********post Status ******************
+    //  ******** post Status done ******************
+    const DoneStatus = () => {
+        if (inputStatus) {
+            const today = new Date();
+        let element = {
+            type: "status",
+            postId: dbPost.length,
+            userId: 0,
+            content: inputStatus,
+            postDate: today.toLocaleDateString(),
+            privacySetting: "( public, friends only, private)",
+            image: "post status "
+        }
+        const table = [...dbPost];
+        table.unshift(element)
+        setDbPost(table)
+        setInputStatus()
+        }else{
+            alert("upload a status")
+        }
+    }
+
+    //  ******** post Status close X ******************
+    const CloseStatus = () => {
+        setInputStatus()
+    }
+
+    // ^^ fontion achraf :
+
+    function achraf(params) {
+        if (params.type == "image") {
+           
+            return(<img className='rounded-xl  h-[45vh] w-[100%] ' src={params.image} alt="img" />)
+        } else if (params.type == "video") {
+            return(<video className='rounded-xl  border-2 h-[45vh] w-[100%] ' controls muted src={params.video} />)
+        } else if (params.type == "status") {
+        }
+    }
+    function achraf2(params) {
+        if (params.type == "image") {
+           
+            return(<img className='rounded-xl   ' src={params.image} alt="img" />)
+        } else{
+            return(<img className='rounded-xl ' src={params.image} alt="img" />)
+
+        }
     }
     const items = [
         {
@@ -167,7 +277,7 @@ export const Section1Profile = () => {
                                 </div>
                                 <div className="text-center ">
                                     <h3 className="text-4xl font-semibold leading-normal  text-blueGray-700 my-4">
-                                        Achraf GASBI
+                                        {dbUser[0].username}
                                     </h3>
                                 </div>
                                 <div className=" py-4 border-t border-blueGray-200 text-center">
@@ -203,37 +313,19 @@ export const Section1Profile = () => {
                                 {/* picture div */}
                                 <div className="w-100 rounded-xl bg-white text-gray-600 py-2 pl-3 pr-2 mb-2 flex flex-col h-[45%] shadow-xl">
                                     <p className="text-gray-600 text-3xl pb-2">Pictures</p>
-                                    <div className="flex flex-wrap gap-3 overflow-y-scroll  profilScroll h-[100%]">
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
-                                        <div className="w-[30%]">
-                                            <img className="rounded-xl" src={image} alt="" />
-                                        </div>
+                                    <div className="flex flex-wrap gap-1 overflow-y-scroll  profilScroll h-[100%]">
+                                        {
+                                            dbPost.map((element, index) =>
+                                                <>
+                                                    <div className="w-[32%] ">
+                                                        {
+                                                            achraf2(element)
+                                                        }
+                                                    </div>
+                                                </>
+                                            )
+                                        }
+
                                     </div>
                                     <div className="flex justify-content-center" >
                                         <button>view all pictures</button>
@@ -291,37 +383,39 @@ export const Section1Profile = () => {
                                     </div>
                                     <hr className="text-gray-600" />
                                     <div className="flex pl-8 pt-1  text-gray-600 py-3">
-                                        <p className=" ml-4 p-2  rounded-xl text-xl hover:bg-[--light] mt-3">Status</p>
-                                        <Button onPress={modal2.onOpen} className=" ml-5 p-2 bg-white-100 rounded-xl text-xl hover:bg-[--light] mt-3">Video</Button>
-                                        <Button className="ml-5 p-2 rounded-xl bg-white-100  text-xl hover:bg-[--light] mt-3" onPress={modal1.onOpen}>Photo</Button>
+                                        <Button onPress={modal3.onOpen} className="ml-5 p-2 bg-white-100 rounded-xl text-xl hover:bg-[--light] mt-3">Status</Button>
+                                        <Button onPress={modal2.onOpen} className="ml-5 p-2 bg-white-100 rounded-xl text-xl hover:bg-[--light] mt-3">Video</Button>
+                                        <Button onPress={modal1.onOpen} className="ml-5 p-2 rounded-xl bg-white-100  text-xl hover:bg-[--light] mt-3" >Photo</Button>
                                         {/* photo */}
-                                        <Modal isOpen={modal1.isOpen} onOpenChange={modal1.onOpenChange}>
+                                        <Modal isOpen={modal1.isOpen} onOpenChange={modal1.onOpenChange} >
                                             <ModalContent>
                                                 {(onClose) => (
                                                     <>
                                                         <ModalHeader className="flex flex-col gap-1">Add Post : Photo</ModalHeader>
                                                         <ModalBody >
+
                                                             <div className="0 flex justify-center">
-                                                                <form action="">
-                                                                    <label htmlFor="dropzone-fileImg"> 
-                                                                    <div className="w-[100%] flex flex-col items-center  border-2 ">
-                                                                        <p>Picture</p>
-                                                                        
-                                                                    <AiOutlinePicture className="text-9xl mx-16 opacity-10" />
-                                                                    <img className='h-[100%] w-[100%]' src={inputImg} alt="" />
-                                                                    </div>
+                                                                <form className="flex flex-col" action="">
+                                                                    <textarea onChange={(e) => { setDescriptionImg(e.target.value) }} value={descriptionImg} className="mb-4 h-15 rounded-xl" placeholder="Description ..." type="text" />
+                                                                    <label htmlFor="dropzone-fileImg">
+                                                                        <div className="w-[100%] flex flex-col items-center  border-2 ">
+                                                                            <p>Picture</p>
+
+                                                                            <AiOutlinePicture className="text-9xl mx-16 opacity-10" />
+                                                                            <img className='h-[100%] w-[100%]' src={inputImg} alt="" />
+                                                                        </div>
                                                                     </label>
                                                                     <input type="file" id="dropzone-fileImg" className="hidden" onChange={getFileImg} accept="image/*" />
                                                                 </form>
                                                             </div>
-                                                            
+
                                                         </ModalBody>
                                                         <ModalFooter>
-                                                            <Button color="danger" variant="light" onPress={modal1.onClose}>
+                                                            <Button onClick={CloseImg} color="danger" variant="light" onPress={modal1.onClose}>
                                                                 Close
                                                             </Button>
-                                                            <Button color="primary" onPress={modal1.onClose}>
-                                                                Action
+                                                            <Button onClick={DoneImg} color="primary" onPress={modal1.onClose}>
+                                                                Done
                                                             </Button>
                                                         </ModalFooter>
                                                     </>
@@ -336,27 +430,26 @@ export const Section1Profile = () => {
                                                     <>
                                                         <ModalHeader className="flex flex-col gap-1">Add Post : Video</ModalHeader>
                                                         <ModalBody>
-                                                        <div className="0 flex justify-center">
+                                                            <div className="0 flex justify-center">
                                                                 <form action="">
-                                                                    <label htmlFor="dropzone-fileVd"> 
-                                                                    <div className="w-[100%] flex flex-col items-center  border-2 ">
-                                                                        <p>Video</p>
-                                                                        
-                                                                    <PiVideoDuotone className="text-9xl mx-16 opacity-10" />
-                                                                    <video controls muted src={inputVd} className={`? src!=`} alt="achraf"></video>
-                                                                        
-                                                                    </div>
+                                                                <textarea onChange={(e) => { setDescriptionVd(e.target.value) }} value={descriptionVd} className="mb-4 h-15 rounded-xl" placeholder="Description ..." type="text" />
+                                                                    <label htmlFor="dropzone-fileVd">
+                                                                        <div className="w-[100%] flex flex-col items-center  border-2 ">
+                                                                            <p>Video</p>
+                                                                            <PiVideoDuotone className="text-9xl mx-16 opacity-10" />
+                                                                            <video controls muted src={inputVd}  ></video>
+                                                                        </div>
                                                                     </label>
                                                                     <input type="file" id="dropzone-fileVd" className="hidden" onChange={getFileVd} accept="video/*" />
                                                                 </form>
                                                             </div>
                                                         </ModalBody>
                                                         <ModalFooter>
-                                                            <Button color="danger" variant="light" onPress={modal2.onClose}>
+                                                            <Button onClick={CloseVd} color="danger" variant="light" onPress={modal2.onClose}>
                                                                 Close
                                                             </Button>
-                                                            <Button color="primary" onPress={modal2.onClose}>
-                                                                Action
+                                                            <Button onClick={DoneVd} color="primary" onPress={modal2.onClose}>
+                                                                Done
                                                             </Button>
                                                         </ModalFooter>
                                                     </>
@@ -364,6 +457,37 @@ export const Section1Profile = () => {
                                             </ModalContent>
                                         </Modal>
                                         {/* finvideo */}
+                                        {/* Status */}
+                                        <Modal isOpen={modal3.isOpen} onOpenChange={modal3.onOpenChange}>
+                                            <ModalContent>
+                                                {(onClose) => (
+                                                    <>
+                                                        <ModalHeader className="flex flex-col gap-1">Add Post : Status</ModalHeader>
+                                                        <ModalBody>
+                                                            <div className="0 flex justify-center">
+                                                                <form className="flex flex-col" action="">
+                                                                    <textarea onChange={(e) => { setInputStatus(e.target.value) }} value={inputStatus} className="mb-4 h-40 rounded-xl" placeholder="Description ..." type="text" />
+
+                                                                    <div className="w-[100%] flex flex-col items-center  border-2 ">
+                                                                        <p>Status</p>
+                                                                    </div>
+
+                                                                </form>
+                                                            </div>
+                                                        </ModalBody>
+                                                        <ModalFooter>
+                                                            <Button onClick={CloseImg} color="danger" variant="light" onPress={modal3.onClose}>
+                                                                Close
+                                                            </Button>
+                                                            <Button onClick={DoneStatus} color="primary" onPress={modal3.onClose}>
+                                                                Done
+                                                            </Button>
+                                                        </ModalFooter>
+                                                    </>
+                                                )}
+                                            </ModalContent>
+                                        </Modal>
+                                        {/* finStatus */}
                                     </div>
 
                                     {/* <div className="flex justify-between py-3 pl-4">
@@ -420,8 +544,12 @@ export const Section1Profile = () => {
                                                         </div>
                                                     </div>
                                                     <div className='min-h-[70%] w-100 '>
-                                                        <p className='text-gray-400 font-medium ps-2 pb-2'>{element.content}</p>
-                                                        <img className='rounded-xl bg-red-900 h-[45vh] w-[100%] ' src={element.image} alt="img" />
+                                                        <p className=' font-medium ps-2 pt-3 pb-2'>{element.content}</p>
+
+                                                        {
+                                                            achraf(element)
+                                                        }
+
                                                     </div>
                                                     <div className='flex px-4 pt-3'>
                                                         <div className='flex gap-4 '>
