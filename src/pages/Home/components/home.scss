@@ -1,3 +1,10 @@
+
+*{
+    font-family: taviraj;
+}
+
+
+
 .DarkMode {
     .theme-switch {
         --toggle-size: 10px;
@@ -368,6 +375,7 @@
 
 @media (max-width:430px) {
     .post-profile{
-        width: 27% !important;
+        width: 22% !important;
     }
 }
+

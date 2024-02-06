@@ -1,56 +1,18 @@
 import React from "react";
-import { useContext, useState } from "react";
-import zakaria from "../../../assets/images/Picsart_22-12-18_00-49-44-927.png";
-import { MyContext } from "../../../utils/ContextProvider";
-import { element } from "prop-types";
+import "./setting.css";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { HiHome } from "react-icons/hi2";
-import {
-  DropdownItem,
-  DropdownTrigger,
-  Dropdown,
-  DropdownMenu,
-  Avatar,
-} 
-from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
 import { IoIosPeople } from "react-icons/io";
 import { LuMessagesSquare } from "react-icons/lu";
 
-export const Sectionpeople = () => {
-  const [
-    dbUser,
-    setDbUser,
-    dbFriendship,
-    setDbFriendship,
-    dbPost,
-    setDbPost,
-    dbComments,
-    setDbComments,
-    dbLikes,
-    setDbLikes,
-  ] = useContext(MyContext);
 
-  const [isFollowing, setIsFollowing] = useState(false);
-
-  const [myInput, setMyInput] = useState(dbUser);
-
-  const handleClick = () => {
-    setIsFollowing((prevState) => !prevState);
-  };
-
-  const filterElement = (event) => {
-    let newTab = myInput.filter((element) =>
-      element.full_name.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setDbUser(newTab);
-  };
-
+export const SectionSetting = () => {
   return (
     <>
     
-
-      <div className="">
+     
       <nav>
        <div>
         <div className="fixed h-[10vh] w-[100vw] z-1 flex px-[5%] border-b-1 bg-white">
@@ -62,7 +24,7 @@ export const Sectionpeople = () => {
           <div className=" flex w-[70%] h-[100%] gap-5 items-center ">
             <div className="max-[430px]:w-[100%] h-[100%] relative flex items-center gap-3  w-[40%]">
               <input
-                onChange={(e) => filterElement(e)}
+                
                 type="search"
                 className="max-[430px]:hidden  rounded-md pe-3 ps-5 h-[50%] w-[80%] bg-gray-200 focus:outline-none"
                 placeholder="Type To Search"
@@ -148,73 +110,169 @@ export const Sectionpeople = () => {
       </div> 
     </nav>
       
-      </div>
+     
 
-      <div className="flex flex-wrap gap-y-5 pt-[15vh] px-[10px] py-[10px]  bg-gray-200 pt-12">
-        
-        {/* Card start */}
 
-        {dbUser.map((element, index) => (
-          <>
-            <div
-              className="max-w-sm mx-auto bg-white  dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg  transition-all duration-700 hover:scale-110"
-              key={index}
-            >
-              <div className="border-b px-4 pb-6">
-                <div className="text-center my-4">
-                  <img
-                    className="h-25git w-25 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4"
-                    src={element.picture}
-                    alt=""
-                  />
-                  <div className="py-2">
-                    <h3 className="font-bold text-2xl text-gray-800 dark:text-black mb-1">
-                      {element.full_name}
-                    </h3>
-                    <div className="inline-flex text-gray-700 dark:text-gray-300 items-center">
-                      <svg
-                        className="h-5 w-5 text-gray-400 dark:text-gray-600 mr-1"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width={24}
-                        height={24}
-                      >
-                        <path
-                          className=""
-                          d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
-                        />
-                      </svg>
-                      {element.location}
+
+
+    <div className="section-body">
+        <div className="container h-[100vh]  p-[15vh] ">
+        <div className="row gutters  h-[60vh]">
+          <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 flex  h-[65vh] ">
+            <div className="card h-100">
+              <div className="card-body flex justify-between ">
+                <div className="account-settings py-12 ">
+                  <div className="user-profile ">
+                    <div className="user-avatar flex justify-center ">
+                      <img
+                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                        alt="Maxwell Admin"
+                      />
                     </div>
+                    <h5 className="user-name">Yuki Hayashi</h5>
+                    <h6 className="user-email">yuki@Maxwell.com</h6>
                   </div>
-                </div>
-                <div className="flex gap-2 px-2 justify-center">
-                  <button
-                    className="rounded-full border-2"
-                    onClick={handleClick}
-                    style={{
-                      width: isFollowing ? "80px" : "100px",
-                      backgroundColor: isFollowing ? "#2EB82E" : "#ffffff",
-                      color: isFollowing ? "#fff" : "#3399FF",
-                      borderColor: isFollowing ? "#2EB82E" : "#3399FF",
-                      transition:
-                        "width 0.6s ease-in-out, background-color 1s ease-in-out",
-                    }}
-                  >
-                    {isFollowing ? "Following" : "+ Follow"}
-                  </button>
-                  <button className=" w-32  rounded-full border-2  border-gray-400 dark:border-gray-700  font-semibold text-black dark:text-white py-2">
-                    Message
-                  </button>
+                  <div className="about">
+                    <h5 className="mb-2 text-primary">About</h5>
+                    <p>
+                      I'm Yuki. Full Stack Designer I enjoy creating
+                      user-centric, delightful and human experiences.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </>
-        ))}
-
-        {/* Card end */}
+          </div>
+          <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12  ">
+            <div className="card h-100">
+              <div className="card-body bg-primary">
+                <div className="row gutters  p-15">
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 className="mb-3 text-primary">Personal Details</h6>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="fullName">Full Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="fullName"
+                        placeholder="Enter full name"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="eMail">Email</label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="eMail"
+                        placeholder="Enter email ID"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="phone">Phone</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="phone"
+                        placeholder="Enter phone number"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="website">Website URL</label>
+                      <input
+                        type="url"
+                        className="form-control"
+                        id="website"
+                        placeholder="Website url"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row gutters p-15">
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 className="mb-3 text-primary">Address</h6>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="Street">Street</label>
+                      <input
+                        type="name"
+                        className="form-control"
+                        id="Street"
+                        placeholder="Enter Street"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="ciTy">City</label>
+                      <input
+                        type="name"
+                        className="form-control"
+                        id="ciTy"
+                        placeholder="Enter City"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="sTate">State</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="sTate"
+                        placeholder="Enter State"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="zIp">Zip Code</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="zIp"
+                        placeholder="Zip Code"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row gutters">
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <div className="text-right p-3">
+                      <button className="btn btn-secondary"
+                        type="button"
+                        id="submit"
+                        name="submit"
+                       
+                      >
+                        Cancel
+                      </button>
+                      <button className="btn btn-primary"
+                        type="button"
+                        id="submit"
+                        name="submit"
+                        
+                      >
+                        Update
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+      
     </>
   );
 };
