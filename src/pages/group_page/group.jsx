@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import zaymas from '../../img/ZAYMAS.png'
-import badge2 from '../../img/badge2.png'
-import badge3 from '../../img/badge3.png'
+
 import { IoPerson } from "react-icons/io5";
 import { BsAt } from "react-icons/bs";
 import { AiFillLike } from "react-icons/ai";
