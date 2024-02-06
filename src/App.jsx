@@ -6,6 +6,8 @@ import { LogIn } from './pages/LogIn/login.jsx';
 import { Forme } from './pages/Forme/forme.jsx';
 import { Route, Routes } from 'react-router-dom';
 import { Error } from './pages/Errors/error.jsx';
+import { Group } from './pages/group_page/group.jsx';
+import { Details } from './pages/group_details/details.jsx';
 import { MyProvider } from './utils/ContextProvider.jsx';
 
 
@@ -22,6 +24,8 @@ function App() {
                     <Route path='/profile' element={<Profile />} />
                     <Route path='/login' element={<LogIn />} />
                     <Route path='/form' element={<Forme />} />
+                    <Route path='/groups' element={<Group />} />
+                <Route path='/details' element={<Details />} />
                 </Routes>
             </MyProvider>
         </>
