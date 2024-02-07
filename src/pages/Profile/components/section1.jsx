@@ -72,6 +72,8 @@ export const Section1Profile = () => {
     //  ******** post Image close X ******************
     const CloseImg = () => {
         setInputImg()
+        setDescriptionImg()
+        
     }
 
 
@@ -84,50 +86,51 @@ export const Section1Profile = () => {
     }
     //  ******** post video done ******************
     const DoneVd = () => {
-      if (inputVd) {
-        const today = new Date();
-        let element = {
-            type: "video",
-            postId: dbPost.length,
-            userId: 0,
-            content: descriptionVd,
-            postDate: today.toLocaleDateString(),
-            privacySetting: "( public, friends only, private)",
-            video: inputVd
+        if (inputVd) {
+            const today = new Date();
+            let element = {
+                type: "video",
+                postId: dbPost.length,
+                userId: 0,
+                content: descriptionVd,
+                postDate: today.toLocaleDateString(),
+                privacySetting: "( public, friends only, private)",
+                video: inputVd
+            }
+            const table = [...dbPost];
+            table.unshift(element)
+            setDbPost(table)
+            setInputVd()
+            setDescriptionVd()
+        } else {
+            alert("upload a video")
         }
-        const table = [...dbPost];
-        table.unshift(element)
-        setDbPost(table)
-        setInputVd()
-        setDescriptionVd()
-      }else{
-        alert("upload a video")
-      }
     }
 
     //  ******** post video close X ******************
     const CloseVd = () => {
         setInputVd()
+        setDescriptionVd()
     }
     // ^^ ********post Status ******************
     //  ******** post Status done ******************
     const DoneStatus = () => {
         if (inputStatus) {
             const today = new Date();
-        let element = {
-            type: "status",
-            postId: dbPost.length,
-            userId: 0,
-            content: inputStatus,
-            postDate: today.toLocaleDateString(),
-            privacySetting: "( public, friends only, private)",
-            image: "post status "
-        }
-        const table = [...dbPost];
-        table.unshift(element)
-        setDbPost(table)
-        setInputStatus()
-        }else{
+            let element = {
+                type: "status",
+                postId: dbPost.length,
+                userId: 0,
+                content: inputStatus,
+                postDate: today.toLocaleDateString(),
+                privacySetting: "( public, friends only, private)",
+                image: "post status "
+            }
+            const table = [...dbPost];
+            table.unshift(element)
+            setDbPost(table)
+            setInputStatus()
+        } else {
             alert("upload a status")
         }
     }
@@ -135,27 +138,23 @@ export const Section1Profile = () => {
     //  ******** post Status close X ******************
     const CloseStatus = () => {
         setInputStatus()
+    
     }
 
     // ^^ fontion achraf :
 
-    function achraf(params) {
+    function Posts(params) {
         if (params.type == "image") {
-           
-            return(<img className='rounded-xl  h-[45vh] w-[100%] ' src={params.image} alt="img" />)
+            return (<img className='rounded-xl  h-[45vh] w-[100%] ' src={params.image} alt="img" />)
         } else if (params.type == "video") {
-            return(<video className='rounded-xl  border-2 h-[45vh] w-[100%] ' controls muted src={params.video} />)
+            return (<video className='rounded-xl  border-2 h-[45vh] w-[100%] ' controls muted src={params.video} />)
         } else if (params.type == "status") {
         }
     }
-    function achraf2(params) {
+    function Pictures(params) {
         if (params.type == "image") {
-           
-            return(<img className='rounded-xl   ' src={params.image} alt="img" />)
-        } else{
-            return(<img className='rounded-xl ' src={params.image} alt="img" />)
-
-        }
+            return (<div className="w-[32%] h-[110px] "><img className='rounded-xl  shadow-xl w-100 h-100 ' src={params.image} alt="img" /> </div>)
+        } 
     }
     const items = [
         {
@@ -178,7 +177,6 @@ export const Section1Profile = () => {
                 rel="stylesheet"
                 href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
             />
-
             <main className="profile-page">
                 <section className="relative block h-500-px">
                     <div
@@ -317,20 +315,18 @@ export const Section1Profile = () => {
                                         {
                                             dbPost.map((element, index) =>
                                                 <>
-                                                    <div className="w-[32%] ">
+                                                    
                                                         {
-                                                            achraf2(element)
+                                                            Pictures(element)
                                                         }
-                                                    </div>
+                                                    
                                                 </>
                                             )
                                         }
-
                                     </div>
                                     <div className="flex justify-content-center" >
                                         <button>view all pictures</button>
                                     </div>
-
                                 </div>
                                 {/* friends div */}
                                 <div className="w-100 rounded-xl bg-white text-gray-600 py-2 pl-3 pr-2  mb-2 flex flex-col h-[32%] shadow-xl">
@@ -356,28 +352,24 @@ export const Section1Profile = () => {
                                             <img className="rounded-t-xl w-100 h-[110px]" src={image} alt="" />
                                             <p className="m-0 pl-1 text-center text-black">userName</p>
                                         </div>
-
-
                                     </div>
                                     <div className="flex justify-content-center" >
                                         <button>view all friends</button>
                                     </div>
-
                                 </div>
-
                             </div>
                             {/* divs droite */}
                             <div className="w-100 rounded-xl  h-screen overflow-y-scroll  profilScroll ">
                                 {/* ****************add Posts************ */}
                                 <div className="w-100 rounded-xl bg-white mb-3 shadow-xl">
-                                    <div className=" flex pt-4 px-3 w-100 justify-evenly items-center ">
+                                    <div className=" flex pt-4 px-5 w-100   items-center ">
                                         {/* <img src="" alt="" /> */}
                                         <div className="flex items-center pb-2 pl-2">
-                                            <img className="rounded-full h-[50px] w-[50px]" src={image} alt="" />
+                                            <img className="rounded-full mt h-[50px] w-[50px]" src={image} alt="" />
                                         </div >
-                                        <div className="w-[75%]">
+                                        <div className="w-[100%]">
                                             <form className="w-[100%]" action="">
-                                                <input className="w-100 bg-transparent placeholder-neutral-300 text-red-400 border-0  focus:outline-none" type="text" placeholder="Write somthing ..." />
+                                                <Button onPress={modal3.onOpen} className="ml-5 p-2 bg-white-100 rounded-xl text-xl w-[100%]  outline-none  "><input onChange={modal3.onOpen} className="w-100 bg-transparent placeholder-neutral-300 text-red-400 border-0  focus:outline-none" type="text" placeholder="Write somthing ..." /></Button>
                                             </form>
                                         </div>
                                     </div>
@@ -391,16 +383,15 @@ export const Section1Profile = () => {
                                             <ModalContent>
                                                 {(onClose) => (
                                                     <>
-                                                        <ModalHeader className="flex flex-col gap-1">Add Post : Photo</ModalHeader>
+                                                        <ModalHeader className="flex flex-col gap-1 pb-0">Add Post : Photo</ModalHeader>
+                                                        <hr className="my-2" />
                                                         <ModalBody >
-
                                                             <div className="0 flex justify-center">
                                                                 <form className="flex flex-col" action="">
-                                                                    <textarea onChange={(e) => { setDescriptionImg(e.target.value) }} value={descriptionImg} className="mb-4 h-15 rounded-xl" placeholder="Description ..." type="text" />
+                                                                    <textarea onChange={(e) => { setDescriptionImg(e.target.value) }} value={descriptionImg} className="mb-4  h-15 rounded-lg" placeholder="Description ..." type="text" />
                                                                     <label htmlFor="dropzone-fileImg">
                                                                         <div className="w-[100%] flex flex-col items-center  border-2 ">
                                                                             <p>Picture</p>
-
                                                                             <AiOutlinePicture className="text-9xl mx-16 opacity-10" />
                                                                             <img className='h-[100%] w-[100%]' src={inputImg} alt="" />
                                                                         </div>
@@ -408,7 +399,6 @@ export const Section1Profile = () => {
                                                                     <input type="file" id="dropzone-fileImg" className="hidden" onChange={getFileImg} accept="image/*" />
                                                                 </form>
                                                             </div>
-
                                                         </ModalBody>
                                                         <ModalFooter>
                                                             <Button onClick={CloseImg} color="danger" variant="light" onPress={modal1.onClose}>
@@ -428,19 +418,23 @@ export const Section1Profile = () => {
                                             <ModalContent>
                                                 {(onClose) => (
                                                     <>
-                                                        <ModalHeader className="flex flex-col gap-1">Add Post : Video</ModalHeader>
+                                                        <ModalHeader className="flex flex-col gap-1 pb-0">Add Post : Video</ModalHeader>
+                                                        <hr className="my-2" />
                                                         <ModalBody>
-                                                            <div className="0 flex justify-center">
+                                                            <div className=" flex  justify-center ">
                                                                 <form action="">
-                                                                <textarea onChange={(e) => { setDescriptionVd(e.target.value) }} value={descriptionVd} className="mb-4 h-15 rounded-xl" placeholder="Description ..." type="text" />
-                                                                    <label htmlFor="dropzone-fileVd">
-                                                                        <div className="w-[100%] flex flex-col items-center  border-2 ">
-                                                                            <p>Video</p>
-                                                                            <PiVideoDuotone className="text-9xl mx-16 opacity-10" />
-                                                                            <video controls muted src={inputVd}  ></video>
-                                                                        </div>
-                                                                    </label>
-                                                                    <input type="file" id="dropzone-fileVd" className="hidden" onChange={getFileVd} accept="video/*" />
+                                                                    <div className=" flex flex-col items-center justify-center ">
+                                                                        <textarea onChange={(e) => { setDescriptionVd(e.target.value) }} value={descriptionVd} className="mb-4 h-15 w-[100%] rounded-lg  rounded-xl" placeholder="Description ..." type="text" />
+                                                                        <label htmlFor="dropzone-fileVd">
+                                                                            <div className="w-[100%] flex flex-col items-center  border-2 ">
+                                                                                <p>Video</p>
+                                                                                <PiVideoDuotone className="text-9xl mx-16 opacity-10" />
+                                                                                <video  controls muted src={inputVd}  ></video>
+                                                                            </div>
+                                                                        </label>
+                                                                        <input type="file" id="dropzone-fileVd" className="hidden" onChange={getFileVd} accept="video/*" />
+                                                                    </div>
+
                                                                 </form>
                                                             </div>
                                                         </ModalBody>
@@ -462,21 +456,20 @@ export const Section1Profile = () => {
                                             <ModalContent>
                                                 {(onClose) => (
                                                     <>
-                                                        <ModalHeader className="flex flex-col gap-1">Add Post : Status</ModalHeader>
+                                                        <ModalHeader className="flex flex-col gap-1 pb-0">Add Post : status</ModalHeader>
+                                                        <hr className="my-2" />
                                                         <ModalBody>
-                                                            <div className="0 flex justify-center">
+                                                            <div className=" ">
                                                                 <form className="flex flex-col" action="">
-                                                                    <textarea onChange={(e) => { setInputStatus(e.target.value) }} value={inputStatus} className="mb-4 h-40 rounded-xl" placeholder="Description ..." type="text" />
+                                                                    <textarea onChange={(e) => { setInputStatus(e.target.value) }} value={inputStatus} className=" h-40 rounded-lg w-100" placeholder="Description ..." type="text" />
 
-                                                                    <div className="w-[100%] flex flex-col items-center  border-2 ">
-                                                                        <p>Status</p>
-                                                                    </div>
+                                                                    
 
                                                                 </form>
                                                             </div>
                                                         </ModalBody>
                                                         <ModalFooter>
-                                                            <Button onClick={CloseImg} color="danger" variant="light" onPress={modal3.onClose}>
+                                                            <Button onClick={CloseStatus} color="danger" variant="light" onPress={modal3.onClose}>
                                                                 Close
                                                             </Button>
                                                             <Button onClick={DoneStatus} color="primary" onPress={modal3.onClose}>
@@ -547,7 +540,7 @@ export const Section1Profile = () => {
                                                         <p className=' font-medium ps-2 pt-3 pb-2'>{element.content}</p>
 
                                                         {
-                                                            achraf(element)
+                                                            Posts(element)
                                                         }
 
                                                     </div>
