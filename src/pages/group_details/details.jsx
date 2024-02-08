@@ -85,19 +85,13 @@ export const Details = () => {
                                         <div className="flex justify-center">
                                             <div className="py-6 px-3  sm:mt-0 flex gap-3">
                                                 <button
-                                                    className="bg-[#957fef] active:bg-[#957fef] uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
-                                                    type="button"
-                                                >
-                                                    Connect
-                                                </button>
-                                                <button
-                                                    className="bg-[#957fef] active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                                                    className="bg-[#FF9843] active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                                                     type="button"
                                                 >
                                                     setting
                                                 </button>
                                                 <button
-                                                    className="bg-[#957fef] active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                                                    className="bg-[#FF9843] active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                                                     type="button"
                                                 >
                                                     add story
