@@ -1,31 +1,54 @@
-import { useContext } from "react"
-import './home.scss'
+import React, { useState } from 'react';
+import zaymas from '../../img/ZAYMAS.png'
 
-import { MyContext } from "../../../utils/ContextProvider"
-import React from "react";
+import { IoPerson } from "react-icons/io5";
+import { BsAt } from "react-icons/bs";
+import { AiFillLike } from "react-icons/ai";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
+import { HiHome } from "react-icons/hi2";
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
-import { IoIosArrowDropdown, IoIosPeople } from "react-icons/io";
+import { IoIosPeople } from "react-icons/io";
 import { LuMessagesSquare } from "react-icons/lu";
 
 
+class Groupes {
+    constructor(title, desc, img, number, connection,members, likes) {
+        this.title = title
+        this.desc = desc
+        this.img = img
+        this.number = number
+        this.connection = connection
+        this.members = members
+        this.likes = likes
+    }
+}
 
-import { IoMdLogOut } from "react-icons/io";
-import { RiHome6Line } from "react-icons/ri";
-import { HiOutlineShoppingCart } from "react-icons/hi2";
-import { useNavigate } from "react-router-dom";
+let group1 = new Groupes("Amine Group", "This is a market group", zaymas, "552", '+500', '+210', '+440');
+let group2 = new Groupes("Achraf Group", "Perfume Lovers", zaymas, "120", '+154', '+50', '+440');
+let group3 = new Groupes("Saad Group", "Techno people", zaymas, "999", '+852', '+650', '+440');
+let group4 = new Groupes("Youssef Group", "Dogs Lovers", zaymas, "100", '+210', '+120', '+440');
+let group5 = new Groupes("Morad Group", "Car Informations", zaymas, "51", '+515', '+11', '+440');
+let group6 = new Groupes("last Group", "lzst Informations", zaymas, "121", '+541', '+154', '+440');
+let group7 = new Groupes("Saad Group", "Techno people", zaymas, "999", '+665', '+75', '+440');
+let group8 = new Groupes("Youssef Group", "Dogs Lovers", zaymas, "100", '+774', '+210', '+440');
+let group9 = new Groupes("Morad Group", "Car Informations", zaymas, "51", '+458', '+41', '+440');
 
-export const NavbarSectionHome = () => {
-    const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes] = useContext(MyContext)
-    const navigate = useNavigate()
+const group = [group1, group2, group3, group4, group5, group6, group7, group8, group9]
+
+
+
+
+export const Group = () => {
+    const [screenArray, setScreenArray] = useState(group)
     return (
-        <>
-            <div className="dark  fixed h-[10vh] w-[100vw] z-1 flex px-[5%]  bg-[--white]">
+        <div className='bg-dark'>
+
+<div className="fixed h-[10vh] w-[100vw] z-1 flex px-[5%] border-b-1 bg-white">
                 <div className="max-[430px]:w-[40%] w-[25%] h-[100%] flex items-center justify-center">
-                    <h3 className="text-[--teal]  font-bold font-serif ">Zay<span className="text-[--dark]">Mas</span>.</h3>
+                    <h3 className="text-[#FF9843]  font-bold font-serif ">Zay<span className="text-[--dark]">Mas</span>.</h3>
                 </div>
-                <div className=" flex w-[70%] h-[100%] gap-5 items-center text-black" >
+                <div className=" flex w-[70%] h-[100%] gap-5 items-center " >
                     <div className="max-[430px]:w-[100%] h-[100%] relative flex items-center gap-3  w-[40%]">
                         <input type="search" className="max-[430px]:hidden  rounded-md pe-3 ps-5 h-[50%] w-[80%] bg-gray-200 focus:outline-none" placeholder="Type To Search" />
                         <FaSearch className="max-[430px]:left-[50%]  absolute top-[50%] translate-y-[-50%] text-gray-400 left-3" />
@@ -53,20 +76,20 @@ export const NavbarSectionHome = () => {
                         </div>
                     </div>
                     <div className="max-[430px]:hidden   h-[80%] flex items-center  w-[55%] gap-5">
-                        <div onClick={() => navigate(`/home/${dbUser[0].username}`)} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <RiHome6Line  className="com text-2xl" />
+                        <div className="p-2 bg-[#ff9843a9] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+                            <HiHome className="text-2xl" />
                         </div>
-                        <div onClick={() => navigate("/profile")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <IoIosPeople  className="com text-2xl" />
+                        <div className="p-2 bg-[#ff9843a9] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+                            <IoIosPeople className="text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <HiOutlineShoppingCart className="com text-2xl" />
+                        <div className="p-2 bg-[#ff9843a9] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <IoStorefrontSharp className="text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <IoNotifications className="com text-2xl" />
+                        <div className="p-2 bg-[#ff9843a9] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <IoNotifications className="text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <LuMessagesSquare className="com text-2xl" />
+                        <div className="p-2 bg-[#ff9843a9] rounded-full hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <LuMessagesSquare className="text-2xl" />
                         </div>
                         
                         
@@ -94,6 +117,91 @@ export const NavbarSectionHome = () => {
                     </div>
                 </div>
             </div>
-        </>
-    );
+
+
+
+            <div className="container bg-dark shadow-xl h-[20vh] justify-center flex items-end mb-5 pb-2">
+            
+            
+            <div class="flex items-center justify-center">
+                <div class="rounded-lg">
+                    <div class="flex">
+                    <div class="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-dark">
+                        <svg viewBox="0 0 20 20" aria-hidden="true" class="pointer-events-none absolute w-5 fill-gray-500 transition">
+                        <path d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
+                        </svg>
+                    </div>
+                    <input type="text" class="w-full max-w-[160px] bg-white pl-2 text-base font-semibold outline-0 outline-[#FF9843] border-[#FF9843]" placeholder="" id=""/>
+                    <input type="button" value="Search" class="bg-[#FF9843] p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-[#FF9843] transition-colors"/>
+                    </div>
+                </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+         
+            </div>
+
+
+
+
+<div className=" h-fit w-[90%] flex flex-wrap gap-5 justify-end">
+{
+    screenArray.map((element, index) => 
+    
+    <>
+<div className="allcard flex flex-wrap justify-between">
+            <div className="cards h-[40vh] rounded-lg shadow-lg hover:scale-105 transition">
+
+                    <div className="image">
+                        <img src={zaymas} alt="" className='w-[100%] rounded-md' />
+                    </div>
+
+
+
+        <div className="textandbutt flex flex-col justify-around h-[50%]">
+                    <div className="text">
+                        <h2 className='font-semibold text-center text-dark text-white'>{element.title}</h2> 
+                    </div>
+
+                    <div className="members flex flex-row text-md justify-center mb-1">
+                    <span className='p-1 text-white'> <IoPerson /> </span> 
+                    <span className='text-white'>{element.members} Members</span>
+                    
+                    </div>
+
+                    <div className="buttons h-[20%] flex justify-center items-center mb-2">
+                    <button
+                    class="flex justify-center items-center gap-2 w-40 h-12 cursor-pointer rounded-md shadow-2xl text-white font-semibold bg-[#FF9843] hover:shadow-xl hover:shadow-[#FF9843] hover:scale-105 duration-300 hover:from-[#FF9843] hover:to-[#FF9843]"
+                    >
+                    Join
+                    </button>
+
+                    </div></div>
+</div>
+            </div>
+    </>
+    
+    
+    )
 }
+</div>
+
+
+
+
+
+
+
+        
+        
+        </div>
+    );
+};

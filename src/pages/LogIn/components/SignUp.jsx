@@ -52,6 +52,7 @@ function SignUpForm() {
                 setConfirmPassword("")
                 console.log(newTab);
                 // navigate("/")
+                
 
             } else {
                 alert("User already exist ")
@@ -72,7 +73,7 @@ function SignUpForm() {
         }
     }
 
-    
+
 
     const handleImageChange = (e) => {
         const selectedImage = e.target.files[0];

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaApple , FaGoogle, FaFacebook} from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { MyContext } from "../../../utils/ContextProvider";
 
 function SignInForm() {
@@ -12,7 +12,7 @@ function SignInForm() {
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState("")
 
-    
+    const {id} = useParams()
 
     const login = (e) => {
         e.preventDefault()
@@ -22,15 +22,16 @@ function SignInForm() {
             console.log(dbUser)
             if (connectedUser != -1 ) {
                 
-                navigate(`/home/${newTab[connectedUser].userName}`)
                 console.log(newTab[connectedUser]);
                 setUserName("")
                 setPassword("")
 
                 let usr = newTab.splice(connectedUser,1)
                 newTab.unshift(usr[0])
-                // setDbUser(newTab)
+                setDbUser(newTab)
                 console.log(newTab)
+                navigate(`/home/${dbUser[0].username}`)
+
                 
             } else {
                 alert("User does not exist in database")
