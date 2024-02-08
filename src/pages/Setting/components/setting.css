@@ -1,52 +1,129 @@
 
 .section-body{
+    background: #03033f;
+
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: .25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+.me-2 {
+    margin-right: .5rem!important;
+}
+
+.btnmessage {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #03045e;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+   }
    
-    color: #bcd0f7;
-    background: #1A233A;
-    
-    }
-    .account-settings .user-profile {
-        margin: 0 0 1rem 0;
-        padding-bottom: 1rem;
-        text-align: center;
-    }
-    .account-settings .user-profile .user-avatar {
-        margin: 0 0 1rem 0;
-    }
-    .account-settings .user-profile .user-avatar img {
-        width: 90px;
-        height: 90px;
-        -webkit-border-radius: 100px;
-        -moz-border-radius: 100px;
-        border-radius: 100px;
-    }
-    .account-settings .user-profile h5.user-name {
-        margin: 0 0 0.5rem 0;
-    }
-    .account-settings .user-profile h6.user-email {
-        margin: 0;
-        font-size: 0.8rem;
-        font-weight: 400;
-    }
-    .account-settings .about {
-        margin: 1rem 0 0 0;
-        font-size: 0.8rem;
-        text-align: center;
-    }
-    .card {
-        background: #272E48;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        border: 0;
-        margin-bottom: 1rem;
-    }
-    .form-control {
-        border: 1px solid #596280;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-        font-size: .825rem;
-        background: #1A233A;
-        color: #bcd0f7;
-    }
+   .btnmessage::before,
+   .btnmessage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+   
+   .btnmessage::before {
+    left: -10px;
+    background: #240046;
+   }
+   
+   .btnmessage::after {
+    right: -10px;
+    background: #5a189a;
+   }
+   
+   .btnmessage:hover::before,
+   .btnmessage:hover::after {
+    width: 58%;
+   }
+   
+   .btnmessage:hover span {
+    color: #e0aaff;
+    transition: 0.3s;
+   }
+   
+   .btnmessage span {
+    color: #03045e;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }
+
+
+
+   .savebtn {
+    --color: #00A97F;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 12px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+   }
+   
+   .savebtn::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+   }
+   
+   .savebtn::before {
+    top: -1em;
+    left: -1em;
+   }
+   
+   .savebtn::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+   }
+   
+   .savebtn:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+   }
+   
+   .savebtn:hover {
+    color: rgb(10, 25, 30);
+   }
+   
+   .savebtn:active {
+    filter: brightness(.8);
+   }
+   

@@ -13,6 +13,7 @@ import { Events } from './pages/events/events.jsx';
 import { Events2 } from './pages/events2/events2.jsx';
 
 import { SectionSetting } from './pages/Setting/components/sectionSetting.jsx';
+import { Sectionteam } from './pages/Team/components/sectionTeam.jsx';
 
 
 function App() {
@@ -32,8 +33,19 @@ function App() {
                     <Route path='/events' element ={< Events />}/> 
                     <Route path='/events2' element ={< Events2 />}/>  
                     <Route path='/setting' element={<SectionSetting />} />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
                     <Route path='/groups' element={<Group />} />
                 <Route path='/details' element={<Details />} />
+>>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
+=======
+                    <Route path='/team' element={<Sectionteam />} />
+>>>>>>> ziko
+=======
+                    <Route path='/groups' element={<Group />} />
+                <Route path='/details' element={<Details />} />
+>>>>>>> 33710e953efd2723336021f0a2e97cf849fce7fb
                 </Routes>
             </MyProvider>
         </>
