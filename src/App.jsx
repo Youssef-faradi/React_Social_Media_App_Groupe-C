@@ -10,6 +10,7 @@ import { Group } from './pages/group_page/group.jsx';
 import { Details } from './pages/group_details/details.jsx';
 import { MyProvider } from './utils/ContextProvider.jsx';
 import { SectionSetting } from './pages/Setting/components/sectionSetting.jsx';
+import { Sectionteam } from './pages/Team/components/sectionTeam.jsx';
 
 
 function App() {
@@ -27,10 +28,14 @@ function App() {
                     <Route path='/form' element={<Forme />} />
 <<<<<<< HEAD
                     <Route path='/setting' element={<SectionSetting />} />
+<<<<<<< HEAD
 =======
                     <Route path='/groups' element={<Group />} />
                 <Route path='/details' element={<Details />} />
 >>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
+=======
+                    <Route path='/team' element={<Sectionteam />} />
+>>>>>>> ziko
                 </Routes>
             </MyProvider>
         </>

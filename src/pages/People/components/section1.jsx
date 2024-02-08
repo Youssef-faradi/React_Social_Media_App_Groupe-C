@@ -50,7 +50,7 @@ export const Sectionpeople = () => {
     <>
     
 
-      <div className="">
+      
       <nav>
        <div>
         <div className="fixed h-[10vh] w-[100vw] z-1 flex px-[5%] border-b-1 bg-white">
@@ -148,9 +148,9 @@ export const Sectionpeople = () => {
       </div> 
     </nav>
       
-      </div>
+     
 
-      <div className="flex flex-wrap gap-y-5 pt-[15vh] px-[10px] py-[10px]  bg-gray-200 pt-12">
+      <div className="flex flex-wrap gap-y-5 pt-[15vh] px-[10px] py-[10px]  bg-gray-200">
         
         {/* Card start */}
 
