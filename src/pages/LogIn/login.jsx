@@ -25,9 +25,9 @@ export const LogIn = () => {
 
     return (
 
-        <div className="loginPage ">
-            <div className="darkMode absolute z-10 top-10 right-10">
-                <label className="theme-switch">
+        <div className="dark bg-[--white] loginPage ">
+            <div className="dark darkMode bg-[--light] absolute z-10 top-[20%] shadow right-[20.5%] rounded-e-full px-1 pe-2 max-[430px]:right-1  max-[430px]:rounded  ">
+                <label className="theme-switch mt-2">
                     <input type="checkbox" className="theme-switch__checkbox" />
                     <div className="theme-switch__container">
                         <div className="theme-switch__clouds"></div>
@@ -48,14 +48,16 @@ export const LogIn = () => {
                     </div>
                 </label>
             </div>
-            <div className="App  ">
+            <div className="App dark z-0 ">
                 <div className={containerClass} id="container">
-                    <div className="signBtns absolute hidden z-10 h-[15%]" >
-                        <button >Sign in</button>
-                        <button>Sign up</button>
+                    <div className="signBtns absolute hidden z-10 h-[15%] " >
+                        <button id="signIn" onClick={() => handleOnClick("signIn")} >Sign in</button>
+                        <button id="signUp" onClick={() => handleOnClick("signUp")}>Sign up</button>
                     </div>
-                    <SignUpForm />
-                    <SignInForm />
+                    <div>
+                        <SignUpForm />
+                        <SignInForm />
+                    </div>
                     <div className="overlay-container">
                         <div className="overlay">
                             <div className="overlay-panel overlay-left">
@@ -87,45 +89,6 @@ export const LogIn = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="FlipCard">
-                <motion.div
-                    className="card__wrapper"
-                    onClick={() => {
-                        setIsFlipped(!isFlipped);
-                    }}
-                >
-                    <motion.div
-                        transition={transitionConfig}
-                        initial={false}
-                        animate={{ rotateY: isFlipped ? 180 : 0 }}
-                        className="card"
-                    >
-                        <SignInForm/>
-                    </motion.div>
-                    <motion.div
-                        transition={transitionConfig}
-                        initial={false}
-                        animate={{ rotateY: isFlipped ? 0 : -180 }}
-                        className="card"
-                    >
-                        <SignUpForm/>
-                    </motion.div>
-                </motion.div>
-            </div> */}
-            {/* <div className="  ">
-                <ReactCardFlip isFlipped={flip}
-                    flipDirection="vertical">
-                    <div className="">
-                        <SignInForm/>
-                        <button onClick={() => setFlip(!flip)}>
-                            Flip</button>
-                    </div>
-                    <div className="">
-                        <SignUpForm/>
-                        <button onClick={() => setFlip(!flip)}>Flip</button>
-                    </div>
-                </ReactCardFlip>
-            </div> */}
         </div>
     );
 

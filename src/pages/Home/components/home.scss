@@ -215,7 +215,7 @@
 
 
 .heart-container {
-    --heart-color: #08D9D6;
+    --heart-color: var(--tealo);
     position: relative;
     width: 33px;
     height: 33px;

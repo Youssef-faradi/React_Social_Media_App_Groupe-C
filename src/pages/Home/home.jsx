@@ -11,7 +11,7 @@ export const Home = () => {
         <>  
             
             <NavbarSectionHome/>
-            <div className='h-[15vh] max-[430px]:h-[10vh]'>
+            <div className='dark bg-[--lighter] h-[15vh] max-[430px]:h-[10vh]'>
                 
             </div>
             <SidebarSectionHome/>

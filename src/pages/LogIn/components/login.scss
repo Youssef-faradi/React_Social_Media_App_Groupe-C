@@ -1,5 +1,5 @@
 .loginPage {
-    background: #f6f5f7 !important;
+    background: var(--white) !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -9,7 +9,7 @@
     position: relative;
 
     .theme-switch {
-        --toggle-size: 30px;
+        --toggle-size: 12px;
         /* the size is adjusted using font-size,
         this is not transform scale,
            so you can choose any size */
@@ -217,7 +217,8 @@
     .App {
         font-family: sans-serif !important;
         text-align: center !important;
-
+        border: solid 1px white !important;
+        border-radius: 10px;
     }
 
     @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
@@ -236,6 +237,7 @@
     }
 
     p {
+        color: var(--dark);
         font-size: 14px !important;
         font-weight: 100 !important;
         line-height: 20px !important;
@@ -245,10 +247,11 @@
 
     span {
         font-size: 12px !important;
+        color: var(--dark);
     }
 
     a {
-        color: #333 !important;
+        color: var(--dark) !important;
         font-size: 14px !important;
         text-decoration: none !important;
         margin: 15px 0 !important;
@@ -256,8 +259,8 @@
 
     button {
         border-radius: 20px !important;
-        background-color: #08D9D6 !important;
-        color: #ffffff !important;
+        background-color: var(--teal) !important;
+        color: var(--white) !important;
         font-size: 12px !important;
         font-weight: bold !important;
         padding: 12px 45px !important;
@@ -290,24 +293,27 @@
         height: 100%;
         width: 0;
         border-radius: 15px;
-        background-color: white;
+        background-color: var(--white);
         z-index: -1;
         transition: all 0.4s;
     }
 
     button:hover {
-        color: #252A34 !important;
-        border: 1px #08D9D6 solid !important;
+        color: var(--dark) !important;
+        border: 1px var(--teal) solid !important;
     }
 
     button:hover::before {
         width: 100%;
     }
+    button:active::before {
+        width: 100%;
+    }
 
     // .log:hover {
-    //     background: white !important;
-    //     border: 1px #08D9D6 solid !important;
-    //     color: #08D9D6 !important;
+    //     background: var(--white) !important;
+    //     border: 1px var(--teal) solid !important;
+    //     color: var(--teal) !important;
     //     box-shadow: 0px 5px 10px rgb(8, 217, 214, 0.4) !important;
     //     transform: translateY(-2px) !important;
     // }
@@ -319,12 +325,12 @@
 
     button.ghost {
         background-color: transparent !important;
-        border: 1px white solid !important;
+        border: 1px var(--white) solid !important;
     }
 
 
     form {
-        background-color: #ffffff !important;
+        background-color: var(--white) !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -416,12 +422,12 @@
 
     .overlay {
         background: #ff416c !important;
-        background: -webkit-linear-gradient(to right, #08D9D6, #52e3c2) !important;
-        background: linear-gradient(#08D9D6, #52e3c2) !important;
+        background: -webkit-linear-gradient(to right, var(--teal), #35b295) !important;
+        background: linear-gradient(var(--teal), #0bd9a9) !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
         background-position: 0 0 !important;
-        color: #ffffff !important;
+        color: var(--white) !important;
         position: relative !important;
         left: -100% !important;
         height: 100% !important;
@@ -498,35 +504,12 @@
     }
 
     footer a {
-        color: #52e3c2 !important;
+        color: #27aa8b !important;
         text-decoration: none !important;
     }
 
 
-    // .FlipCard{
-    //     .card {
-    //         user-select: none;
-    //         pointer-events: none;
-    //         position: absolute;
-    //         top: 0;
-    //         left: 0;
-    //         width: 10vw;
-    //         height: 30vh;
-    //         background-color: white;
-    //         border-radius: 1rem;
-    //         padding: 1rem;
-    //         backface-visibility: hidden;
 
-    //         &__wrapper {
-    //             cursor: pointer;
-    //             width: 135px;
-    //             height: 135px;
-    //             position: relative;
-    //             perspective: 200px;
-    //         }
-    //     }
-    // }
- 
 
 
 }
@@ -554,17 +537,15 @@
 
                 }
             }
-
             .sign-in-container{
                 width: 100% !important;
+                
             }
             .sign-up-container{
                 width: 100% !important;
                 left: -100% !important;
-                margin-top: 10px !important;
             }
             .overlay-container {
-                width: 40vw !important;
                 display: none !important;
             }
         }

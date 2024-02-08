@@ -16,7 +16,7 @@ function App() {
             <MyProvider>
                 <Routes>
                     <Route path='/*' element={<Error />} />
-                    <Route path='/' element={<Home />} />
+                    <Route path='/home/:id' element={<Home />} />
                     <Route path='/market' element={<Market />} />
                     <Route path='/people' element={<People />} />
                     <Route path='/profile' element={<Profile />} />
