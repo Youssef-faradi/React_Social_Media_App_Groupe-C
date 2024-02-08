@@ -54,7 +54,7 @@ export const Group = () => {
             image: image,
             title: name,
             groupeId: group.length ,
-            userId : dbUser[0].userId
+            userId : dbUser[0]
         }
         screenArray.push(newGroup);
         handleClose();
@@ -71,7 +71,7 @@ export const Group = () => {
     const navigate = useNavigate()
 
     function GroupeButton (){
-        if (dbUser[0].userId == group[0].userId) {
+        if (dbUser[0] == group.length[0]) {
             return(<div className="buttons h-[20%] flex justify-center items-center mb-2">
             <button onClick={() => navigate("/details")}
                 class="flex justify-center items-center gap-2 w-40 h-12 cursor-pointer rounded-md shadow-2xl text-white font-semibold bg-[#FF9843] hover:shadow-xl hover:shadow-[#FF9843] hover:scale-105 duration-300 hover:from-[#FF9843] hover:to-[#FF9843]"
