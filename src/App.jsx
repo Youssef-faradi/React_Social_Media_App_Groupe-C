@@ -27,7 +27,8 @@ function App() {
                     <Route path='/market' element={<Market />} />
                     <Route path='/people' element={<People />} />
                     <Route path='/profile' element={<Profile />} />
-                    <Route path='/login' element={<LogIn />} />
+                    <Route path='/profile/:idUser' element={<Profile />} />
+                    <Route path='/' element={<LogIn />} />
                     <Route path='/form' element={<Forme />} />
                     <Route path='/events' element ={< Events />}/> 
                     <Route path='/events2' element ={< Events2 />}/>  

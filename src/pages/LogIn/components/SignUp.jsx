@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { MyContext } from "../../../utils/ContextProvider";
 
 
+import img from '../../../assets/images/Default-user-picture.webp'
+
+
 function SignUpForm() {
 
     const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes] = useContext(MyContext)
@@ -38,7 +41,8 @@ function SignUpForm() {
                     full_name: username,
                     birthdate: "**/**/****",
                     registrationDate: today.toLocaleDateString(),
-                    location: "city"
+                    location: "city",
+                    picture : img
                 }
                 
                 newTab.push(user)
