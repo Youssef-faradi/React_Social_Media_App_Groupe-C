@@ -1,9 +1,12 @@
+import { Sectionpeople } from "./components/section1";
 
 
 export const People = () => {
-    return (
-        <>  
-            <h1>hello mate</h1>
-        </>
-    )
-}
+  
+  return (
+    <>
+      
+     <Sectionpeople/>
+    </>
+  );
+};

@@ -6,6 +6,7 @@ import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegComment } from 'react-icons/fa';
 import { FaRetweet } from "react-icons/fa6";
+import { StoriesSectionHome } from './stories';
 
 
 
@@ -26,17 +27,18 @@ export const  PostsSectionHome = () => {
     ];
     return (
         <>
-            <div className='bg-[--light]  max-[430px]:w-[100vw] max-[430px]:ms-0 ms-[20vw]  min-h-[100vh] w-[55vw] flex flex-wrap justify-center gap-5 py-[5vh]'>
-                <div className='max-[430px]:w-[90%] w-[70%] min-h-[80vh] rounded-md shadow-xl bg-white px-[6%] py-[4%] flex flex-col gap-4'>
-                    <div className='flex gap-2  w-[100%] h-[10] '>
-                        <div className='flex gap-2 w-[80%] max-h-[10vh]'>
-                            <img className='post-profile min-[430px]:w-[13%] rounded-2xl  h-[90%] w-[18%]' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="." />
+            <div className='bg-[--light] max-[430px]:w-[100vw] max-[430px]:ms-0 ms-[22.5vw]  min-h-[100vh] rounded-xl w-[53vw] flex flex-wrap justify-center gap-5'>
+                <StoriesSectionHome/>
+                <div className='max-[430px]:w-[90%] w-[80%] h-[110vh] rounded-md shadow-xl bg-white px-[4%] pt-[4%] flex flex-col gap-4'>
+                    <div className='flex w-[100%] h-[9%] '>
+                        <div className='flex gap-2  w-[80%] max-h-[10vh]'>
+                            <img className='post-profile rounded-2xl h-[80%] w-[15%]' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="." />
                             <div>
                                 <h5 className=''>Username</h5>
                                 <p><span className='ps-2'>time</span>min</p>
                             </div>
                         </div>
-                        <div className='z-0'>
+                        <div className='z-0 '>
                             <Dropdown>
                                 <DropdownTrigger className="drop">
                                     <Button >
@@ -57,13 +59,13 @@ export const  PostsSectionHome = () => {
                             </Dropdown>
                         </div>
                     </div>
-                    <div className='min-h-[70%] w-100 '>
-                        <p className='text-gray-400 font-medium ps-2'>descriptionawdaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    <div className='h-[75%]  '>
+                        <p className='text-gray-400 min-h-[10%] font-medium ps-2'>descriptionawdaaaaaaaaaaaaaaaa
                         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaad</p>
-                        <img className='rounded-xl bg-red-900 min-h-[90%] w-[100%] ' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="img" />
+                        <img className='rounded-xl bg-red-900 h-[90%] w-[100%] ' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="img" />
                     </div>
-                    <div className='flex px-4 pt-3'>
-                        <div className='flex gap-4 '>
+                    <div className='flex ps-4 pt-2'>
+                        <div className='flex gap-3 '>
                             <div title="Like" className="heart-container ">
                                 <input id="Give-It-An-Id" className="z-1 checkbox" type="checkbox" />
                                 <div className="svg-container">

@@ -1,68 +1,15 @@
 import React, { createContext, useState } from "react"
 import productTest from '../assets/images/1.1_1_.jpg';
+import zakaria from "../assets/images/Picsart_22-12-18_00-49-44-927.png";
+import image from "../assets/images/profil.jpg"
+import image1 from "../assets/images/homme1.avif"
+
 
 export const MyContext = createContext()
 
 
 export const MyProvider = ({ children }) => {
 
-    const [products, setProducts] = useState([
-
-        {
-            image: productTest,
-            title: 'Jean ZARA',
-            price: 100500  ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'JEan kora',
-            price: 100500 ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'Jean morocco',
-            price: 100500 ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'Jean youssef',
-            price: 100500 ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'EEEEE',
-            price: 100500 ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'FFFFF',
-            price: 100500 ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'JJJJJ',
-            price: 100500 ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'HHHHH',
-            price: 100500 ,
-            description : ''
-        },
-        {
-            image: productTest,
-            title: 'IIIII',
-            price: 100500 ,
-            description : ''
-        }
-    ])
 
     // ^ Database of users :
 
@@ -72,51 +19,113 @@ export const MyProvider = ({ children }) => {
             username: "user 1",
             password: "password1",
             email: "user1@gmail.com",
-            full_name: " full name user 1",
+            full_name: " zakaria",
             birthdate: "15/01/2000",
             registrationDate: "02/02/2024", 
-            location : " casablanca"
+            location : "casablanca",
+            picture : zakaria,
+            location : " casablanca" ,
+            picture :image
         },
         {
             userId: 0,
             username: "user 2",
             password: "password2",
             email: "user2@gmail.com",
-            full_name: " full name user 2",
+            full_name: " achraf",
             birthdate: "17/01/2000",
             registrationDate: "15/09/2029", 
-            location : " casablanca"
+            location : " casablanca",
+            picture : zakaria,
+            location : " casablanca" ,
+            picture :image
         },
         {
             userId: 0,
             username: "user 3",
             password: "password3",
             email: "user3@gmail.com",
-            full_name: " full name user 3",
+            full_name: " youssef",
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
-            location : " casablanca"
+            location : " casablanca",
+            picture : zakaria,
+            picture :image
         },
         {
             userId: 0,
             username: "user 4",
             password: "password4",
             email: "user4@gmail.com",
-            full_name: " full name user 4",
+            full_name: " saad",
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
-            location : " casablanca"
+            location : " casablanca",
+            picture : zakaria,      
+            picture :image
         },
         {
             userId: 0,
             username: "user 5",
             password: "password5",
             email: "user5@gmail.com",
-            full_name: " full name user 5",
+            full_name: " amine",
             birthdate: "20/01/2000",
             registrationDate: "19/12/2021", 
-            location : " casablanca"
-        }
+            location : " casablanca",
+            picture : zakaria
+        },
+
+        {
+            userId: 0,
+            username: "user 5",
+            password: "password6",
+            email: "user5@gmail.com",
+            full_name: " mourad",
+            birthdate: "20/01/2000",
+            registrationDate: "19/12/2021", 
+            location : " casablanca",
+            picture : zakaria
+        },
+        {
+            userId: 0,
+            username: "user 5",
+            password: "password6",
+            email: "user5@gmail.com",
+            full_name: " mourad",
+            birthdate: "20/01/2000",
+            registrationDate: "19/12/2021", 
+            location : " casablanca",
+            picture : zakaria
+        },
+        {
+            userId: 0,
+            username: "user 5",
+            password: "password6",
+            email: "user5@gmail.com",
+            full_name: " mourad",
+            birthdate: "20/01/2000",
+            registrationDate: "19/12/2021", 
+            location : " casablanca",
+            picture : zakaria
+        },
+        {
+            userId: 0,
+            username: "user 5",
+            password: "password6",
+            email: "user5@gmail.com",
+            full_name: " mourad",
+            birthdate: "20/01/2000",
+            registrationDate: "19/12/2021", 
+            location : " casablanca",
+            picture : zakaria,
+                        picture :image
+
+        },
+       
+        
+        
+        
     ])
 
     // ^ Database of friendShip :
@@ -135,11 +144,27 @@ export const MyProvider = ({ children }) => {
     const [dbPost, setDbPost] = useState([
         {
             postId: 0,
-            userId: "=dbUserId 1 (number)",
+            userId: 0,
             content: "descreption du post 1",
             postDate: "01/01/2024",
             privacySetting: "( public, friends only, private)",
-            image: "URL Image 1"
+            image: image1
+        },
+        {
+            postId: 1,
+            userId: 0,
+            content: "descreption du post 2",
+            postDate: "02/02/2024",
+            privacySetting: "( public, friends only, private)",
+            image: image
+        },
+        {
+            postId: 1,
+            userId: 0,
+            content: "descreption du post 3",
+            postDate: "03/03/2024",
+            privacySetting: "( public, friends only, private)",
+            image: image1
         }
     ])
 
@@ -166,11 +191,24 @@ export const MyProvider = ({ children }) => {
         }
     ])
 
+    // ^^ Database of Market :
+
+    const [products, setProducts] = useState([
+
+        {
+            image: productTest,
+            title: 'Jean ZARA',
+            price: 100500 ,
+            description : 'good very cheap ggjhev lqsur nhdjdb' 
+        },
+
+    ])
+
 
     return (
         <>
 
-            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes , products, setProducts]} >
+            <MyContext.Provider value={[dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes , products ,setProducts]} >
                 {children}
             </MyContext.Provider>
 
