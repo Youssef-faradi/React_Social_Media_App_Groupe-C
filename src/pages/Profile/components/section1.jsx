@@ -24,6 +24,7 @@ import { FaRetweet } from "react-icons/fa6";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
 
+import {NavbarSectionHome} from "../../Home/components/navbar"
 
 
 
@@ -37,7 +38,6 @@ export const Section1Profile = () => {
     const [inputVd, setInputVd] = useState()
     const [descriptionVd, setDescriptionVd] = useState()
     const [inputStatus, setInputStatus] = useState()
-    const [chihaja, setChihaja] = useState()
     // ^^ ********post  Image ******************
     //  ******** input Image ******************
     const getFileImg = (event) => {
@@ -173,6 +173,7 @@ export const Section1Profile = () => {
 
     return (
         <>
+            <NavbarSectionHome/>
             <link
                 rel="stylesheet"
                 href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
@@ -236,9 +237,9 @@ export const Section1Profile = () => {
                                             </div>
                                             <div className="mr-4 p-3 text-center">
                                                 <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                                                    10
+                                                    {dbPost.length}
                                                 </span>
-                                                <span className="text-sm text-blueGray-400">Photos</span>
+                                                <span className="text-sm text-blueGray-400">Post</span>
                                             </div>
                                             <div className="lg:mr-4 p-3 text-center">
                                                 <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">

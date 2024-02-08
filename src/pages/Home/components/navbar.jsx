@@ -14,9 +14,11 @@ import { LuMessagesSquare } from "react-icons/lu";
 import { IoMdLogOut } from "react-icons/io";
 import { RiHome6Line } from "react-icons/ri";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 export const NavbarSectionHome = () => {
     const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes] = useContext(MyContext)
+    const navigate = useNavigate()
     return (
         <>
             <div className="fixed h-[10vh] w-[100vw] z-1 flex px-[5%] border-b-1 bg-white">
@@ -52,10 +54,10 @@ export const NavbarSectionHome = () => {
                     </div>
                     <div className="max-[430px]:hidden   h-[80%] flex items-center  w-[55%] gap-5">
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <RiHome6Line className="com text-2xl" />
+                            <RiHome6Line onClick={() => navigate("/")} className="com text-2xl" />
                         </div>
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <IoIosPeople className="com text-2xl" />
+                            <IoIosPeople onClick={() => navigate("/profile")} className="com text-2xl" />
                         </div>
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
