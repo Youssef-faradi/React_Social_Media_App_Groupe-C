@@ -43,6 +43,11 @@ function App() {
                     <Route path='/groups' element={<Group />} />
                     <Route path='/details' element={<Details />} />
 
+                    <Route path='/groups' element={<Group />} />
+                    <Route path='/details' element={<Details />} />
+                    <Route path='/team' element={<Sectionteam />} />
+                    <Route path='/groups' element={<Group />} />
+                    <Route path='/details' element={<Details />} />
                 </Routes>
             </MyProvider>
         </>
