@@ -27,9 +27,9 @@ export const  PostsSectionHome = () => {
     ];
     return (
         <>
-            <div className='bg-[--light] max-[430px]:w-[100vw] max-[430px]:ms-0 ms-[22.5vw]  min-h-[100vh] rounded-xl w-[53vw] flex flex-wrap justify-center gap-5'>
+            <div className='bg-[--lighter] dark max-[430px]:w-[100vw] max-[430px]:ms-0 ms-[22.5vw]  min-h-[100vh]  w-[53vw] flex flex-wrap justify-center gap-3'>
                 <StoriesSectionHome/>
-                <div className='max-[430px]:w-[90%] w-[80%] h-[110vh] rounded-md shadow-xl bg-white px-[4%] pt-[4%] flex flex-col gap-4'>
+                <div className='dark  text-[--dark] max-[430px]:w-[90%] w-[80%] h-[110vh] rounded-md shadow-xl bg-[--white] px-[4%] pt-[4%] flex flex-col gap-4'>
                     <div className='flex w-[100%] h-[9%] '>
                         <div className='flex gap-2  w-[80%] max-h-[10vh]'>
                             <img className='post-profile rounded-2xl h-[80%] w-[15%]' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="." />
@@ -62,7 +62,7 @@ export const  PostsSectionHome = () => {
                     <div className='h-[75%]  '>
                         <p className='text-gray-400 min-h-[10%] font-medium ps-2'>descriptionawdaaaaaaaaaaaaaaaa
                         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaad</p>
-                        <img className='rounded-xl bg-red-900 h-[90%] w-[100%] ' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="img" />
+                        <img className='rounded-xl h-[90%] w-[100%] ' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="img" />
                     </div>
                     <div className='flex ps-4 pt-2'>
                         <div className='flex gap-3 '>
@@ -88,10 +88,10 @@ export const  PostsSectionHome = () => {
                                 </div>
                             </div>
                             <div className='comment'>
-                                <FaRegComment className='com text-3xl mt-[2px] text-[--teal]' />
+                                <FaRegComment className='com text-3xl mt-[2px] text-[--tealo]' />
                             </div>
                             <div className='spin'>
-                                <FaRetweet className='retweet text-3xl text-[--teal]'/>
+                                <FaRetweet className='retweet text-3xl mt-1 text-[--tealo]'/>
                             </div>
                             <button className='send'>
                                 <div className="svg-wrapper-1">
@@ -114,6 +114,8 @@ export const  PostsSectionHome = () => {
                         </div>
                     </div>
                 </div>
+                
+                
             </div>
         </>
     );

@@ -1,11 +1,8 @@
 import React, { createContext, useState } from "react"
-<<<<<<< HEAD
 import zakaria from "../assets/images/Picsart_22-12-18_00-49-44-927.png";
-=======
 import image from "../assets/images/profil.jpg"
 import image1 from "../assets/images/homme1.avif"
 
->>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
 
 export const MyContext = createContext()
 
@@ -14,132 +11,64 @@ export const MyProvider = ({ children }) => {
     // ^ Database of users :
 
     const [dbUser, setDbUser] = useState([
-        {
-            userId: 0, // premier key
-            username: "user 1",
-            password: "password1",
-            email: "user1@gmail.com",
-            full_name: " zakaria",
-            birthdate: "15/01/2000",
-            registrationDate: "02/02/2024", 
-<<<<<<< HEAD
-            location : "casablanca",
-            picture : zakaria
-=======
-            location : " casablanca" ,
-            picture :image
->>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
-        },
-        {
-            userId: 0,
-            username: "user 2",
-            password: "password2",
-            email: "user2@gmail.com",
-            full_name: " achraf",
-            birthdate: "17/01/2000",
-            registrationDate: "15/09/2029", 
-<<<<<<< HEAD
-            location : " casablanca",
-            picture : zakaria
-=======
-            location : " casablanca" ,
-            picture :image
->>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
-        },
-        {
-            userId: 0,
-            username: "user 3",
-            password: "password3",
-            email: "user3@gmail.com",
-            full_name: " youssef",
-            birthdate: "20/01/2000",
-            registrationDate: "19/12/2021", 
-            location : " casablanca",
-<<<<<<< HEAD
-            picture : zakaria
-=======
-            picture :image
->>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
-        },
-        {
-            userId: 0,
-            username: "user 4",
-            password: "password4",
-            email: "user4@gmail.com",
-            full_name: " saad",
-            birthdate: "20/01/2000",
-            registrationDate: "19/12/2021", 
-            location : " casablanca",
-<<<<<<< HEAD
-            picture : zakaria
-=======
-            picture :image
->>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
-        },
-        {
-            userId: 0,
-            username: "user 5",
-            password: "password5",
-            email: "user5@gmail.com",
-            full_name: " amine",
-            birthdate: "20/01/2000",
-            registrationDate: "19/12/2021", 
-            location : " casablanca",
-<<<<<<< HEAD
-            picture : zakaria
-        },
+        // {
+        //     userId: 0, // premier key
+        //     username: "Achraf GASBI",
+        //     password: "password1",
+        //     email: "user1@gmail.com",
+        //     full_name: " zakaria",
+        //     birthdate: "15/01/2000",
+        //     registrationDate: "02/02/2024", 
+        //     location : "casablanca",
+        //     location : " casablanca" ,
+        //     picture :image1
+        // },
+        // {
+        //     userId: 0,
+        //     username: "user 2",
+        //     password: "password2",
+        //     email: "user2@gmail.com",
+        //     full_name: " achraf",
+        //     birthdate: "17/01/2000",
+        //     registrationDate: "15/09/2029", 
+        //     location : " casablanca",
+        //     location : " casablanca" ,
+        //     picture :image
+        // },
+        // {
+        //     userId: 0,
+        //     username: "user 3",
+        //     password: "password3",
+        //     email: "user3@gmail.com",
+        //     full_name: " youssef",
+        //     birthdate: "20/01/2000",
+        //     registrationDate: "19/12/2021", 
+        //     location : " casablanca",
+        //     picture :image
+        // },
+        // {
+        //     userId: 0,
+        //     username: "user 4",
+        //     password: "password4",
+        //     email: "user4@gmail.com",
+        //     full_name: " saad",
+        //     birthdate: "20/01/2000",
+        //     registrationDate: "19/12/2021", 
+        //     location : " casablanca",      
+        //     picture :image
+        // },
+        // {
+        //     userId: 0,
+        //     username: "user 5",
+        //     password: "password5",
+        //     email: "user5@gmail.com",
+        //     full_name: " amine",
+        //     birthdate: "20/01/2000",
+        //     registrationDate: "19/12/2021", 
+        //     location : " casablanca",
+        //     picture : image
+        // },
 
-        {
-            userId: 0,
-            username: "user 5",
-            password: "password6",
-            email: "user5@gmail.com",
-            full_name: " mourad",
-            birthdate: "20/01/2000",
-            registrationDate: "19/12/2021", 
-            location : " casablanca",
-            picture : zakaria
-        },
-        {
-            userId: 0,
-            username: "user 5",
-            password: "password6",
-            email: "user5@gmail.com",
-            full_name: " mourad",
-            birthdate: "20/01/2000",
-            registrationDate: "19/12/2021", 
-            location : " casablanca",
-            picture : zakaria
-        },
-        {
-            userId: 0,
-            username: "user 5",
-            password: "password6",
-            email: "user5@gmail.com",
-            full_name: " mourad",
-            birthdate: "20/01/2000",
-            registrationDate: "19/12/2021", 
-            location : " casablanca",
-            picture : zakaria
-        },
-        {
-            userId: 0,
-            username: "user 5",
-            password: "password6",
-            email: "user5@gmail.com",
-            full_name: " mourad",
-            birthdate: "20/01/2000",
-            registrationDate: "19/12/2021", 
-            location : " casablanca",
-            picture : zakaria
-        },
-       
-        
-        
-=======
-            picture :image
-        }
->>>>>>> ba86768ef0d8f567e6360b01395db95ed77b6065
     ])
 
     // ^ Database of friendShip :
@@ -156,30 +85,30 @@ export const MyProvider = ({ children }) => {
     // ^ Database of Post :
 
     const [dbPost, setDbPost] = useState([
-        {
-            postId: 0,
-            userId: 0,
-            content: "descreption du post 1",
-            postDate: "01/01/2024",
-            privacySetting: "( public, friends only, private)",
-            image: image1
-        },
-        {
-            postId: 1,
-            userId: 0,
-            content: "descreption du post 2",
-            postDate: "02/02/2024",
-            privacySetting: "( public, friends only, private)",
-            image: image
-        },
-        {
-            postId: 1,
-            userId: 0,
-            content: "descreption du post 3",
-            postDate: "03/03/2024",
-            privacySetting: "( public, friends only, private)",
-            image: image1
-        }
+        // {
+        //     postId: 0,
+        //     userId: 0,
+        //     content: "descreption du post 1",
+        //     postDate: "01/01/2024",
+        //     privacySetting: "( public, friends only, private)",
+        //     image: image
+        // },
+        // {
+        //     postId: 1,
+        //     userId: 0,
+        //     content: "descreption du post 2",
+        //     postDate: "02/02/2024",
+        //     privacySetting: "( public, friends only, private)",
+        //     image: image
+        // },
+        // {
+        //     postId: 1,
+        //     userId: 0,
+        //     content: "descreption du post 3",
+        //     postDate: "03/03/2024",
+        //     privacySetting: "( public, friends only, private)",
+        //     image: image1
+        // }
     ])
 
     // ^ Database of Coments :

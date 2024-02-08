@@ -9,6 +9,9 @@ import { Error } from './pages/Errors/error.jsx';
 import { Group } from './pages/group_page/group.jsx';
 import { Details } from './pages/group_details/details.jsx';
 import { MyProvider } from './utils/ContextProvider.jsx';
+import { Events } from './pages/events/events.jsx';
+import { Events2 } from './pages/events2/events2.jsx';
+
 import { SectionSetting } from './pages/Setting/components/sectionSetting.jsx';
 import { Sectionteam } from './pages/Team/components/sectionTeam.jsx';
 
@@ -20,14 +23,16 @@ function App() {
             <MyProvider>
                 <Routes>
                     <Route path='/*' element={<Error />} />
-                    <Route path='/' element={<Home />} />
+                    <Route path='/home/:id' element={<Home />} />
                     <Route path='/market' element={<Market />} />
                     <Route path='/people' element={<People />} />
                     <Route path='/profile' element={<Profile />} />
                     <Route path='/login' element={<LogIn />} />
                     <Route path='/form' element={<Forme />} />
-<<<<<<< HEAD
+                    <Route path='/events' element ={< Events />}/> 
+                    <Route path='/events2' element ={< Events2 />}/>  
                     <Route path='/setting' element={<SectionSetting />} />
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                     <Route path='/groups' element={<Group />} />
@@ -36,6 +41,10 @@ function App() {
 =======
                     <Route path='/team' element={<Sectionteam />} />
 >>>>>>> ziko
+=======
+                    <Route path='/groups' element={<Group />} />
+                <Route path='/details' element={<Details />} />
+>>>>>>> 33710e953efd2723336021f0a2e97cf849fce7fb
                 </Routes>
             </MyProvider>
         </>

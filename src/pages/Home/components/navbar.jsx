@@ -14,16 +14,18 @@ import { LuMessagesSquare } from "react-icons/lu";
 import { IoMdLogOut } from "react-icons/io";
 import { RiHome6Line } from "react-icons/ri";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 export const NavbarSectionHome = () => {
     const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes] = useContext(MyContext)
+    const navigate = useNavigate()
     return (
         <>
-            <div className="fixed h-[10vh] w-[100vw] z-1 flex px-[5%] border-b-1 bg-white">
+            <div className="dark  fixed h-[10vh] w-[100vw] z-1 flex px-[5%]  bg-[--white]">
                 <div className="max-[430px]:w-[40%] w-[25%] h-[100%] flex items-center justify-center">
                     <h3 className="text-[--teal]  font-bold font-serif ">Zay<span className="text-[--dark]">Mas</span>.</h3>
                 </div>
-                <div className=" flex w-[70%] h-[100%] gap-5 items-center " >
+                <div className=" flex w-[70%] h-[100%] gap-5 items-center text-black" >
                     <div className="max-[430px]:w-[100%] h-[100%] relative flex items-center gap-3  w-[40%]">
                         <input type="search" className="max-[430px]:hidden  rounded-md pe-3 ps-5 h-[50%] w-[80%] bg-gray-200 focus:outline-none" placeholder="Type To Search" />
                         <FaSearch className="max-[430px]:left-[50%]  absolute top-[50%] translate-y-[-50%] text-gray-400 left-3" />
@@ -51,11 +53,11 @@ export const NavbarSectionHome = () => {
                         </div>
                     </div>
                     <div className="max-[430px]:hidden   h-[80%] flex items-center  w-[55%] gap-5">
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <RiHome6Line className="com text-2xl" />
+                        <div onClick={() => navigate(`/home/${dbUser[0].username}`)} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+                            <RiHome6Line  className="com text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <IoIosPeople className="com text-2xl" />
+                        <div onClick={() => navigate("/profile")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+                            <IoIosPeople  className="com text-2xl" />
                         </div>
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
