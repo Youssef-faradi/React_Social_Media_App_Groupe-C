@@ -4,12 +4,28 @@
 
 :root {
     --teal: #08D9D6;
+    --tealo: #08D9D6;
     --red: #FF2E63;
     --dark: #252A34;
     --light: #dcfcfb ;
+    --lighter: #dcfcfb ;
     --green: #8bdddb;
     --lightGreen: #dff3f2;
+    --white: #ffffff;
+    --gray: #f4f4f4;
+
+
+
 }
+/* .dark{
+    --white: #0a0a0a;
+    --gray: #201f1f;
+    --dark: white;
+    --lighter: #01322f ;
+    --light: #8bc4c3 ;
+    --teal: #0b8a88;
+    --green: #65adac;
+} */
 
 
 @font-face {

@@ -6,7 +6,7 @@ export const People = () => {
   return (
     <>
       
-     <Sectionpeople/>
+    <Sectionpeople/>
     </>
   );
 };

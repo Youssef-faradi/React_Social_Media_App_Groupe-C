@@ -11,6 +11,7 @@ import { IconButton } from '@material-tailwind/react';
 import { MdAddShoppingCart } from "react-icons/md";
 import { Checkbox, Rating } from 'flowbite-react';
 
+
 export const FirstSectionMarket = () => {
     const { id } = useParams();
     const navigate = useNavigate();
