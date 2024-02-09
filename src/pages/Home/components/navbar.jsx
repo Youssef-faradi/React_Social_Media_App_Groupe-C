@@ -85,8 +85,8 @@ export const NavbarSectionHome = () => {
                                 />
                             </DropdownTrigger>
                             <DropdownMenu aria-label="Profile Actions" variant="flat" >
-                                <DropdownItem key="profile" onClick={() => {}} >My Profile</DropdownItem>
-                                <DropdownItem key="settings">My Settings</DropdownItem>
+                                <DropdownItem key="profile" onClick={() => navigate(`/Profile/${dbUser[0].idUser}`)} >My Profile</DropdownItem>
+                                <DropdownItem key="settings" onClick={() => navigate(`/setting`)} >My Settings</DropdownItem>
                                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                                 <DropdownItem key="logout" color="danger"><div className="flex items-center gap-2">
                                     Log Out <FaSignOutAlt className="text-md"/>
