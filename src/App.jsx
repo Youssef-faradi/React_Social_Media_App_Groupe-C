@@ -6,15 +6,19 @@ import { LogIn } from './pages/LogIn/login.jsx';
 import { Forme } from './pages/Forme/forme.jsx';
 import { Route, Routes } from 'react-router-dom';
 import { Error } from './pages/Errors/error.jsx';
+import { Product } from './pages/Products/product.jsx';
 import { Group } from './pages/group_page/group.jsx';
 import { Details } from './pages/group_details/details.jsx';
-import { MyProvider } from './utils/ContextProvider.jsx';
 import { Events } from './pages/events/events.jsx';
 import { Events2 } from './pages/events2/events2.jsx';
 
 import { SectionSetting } from './pages/Setting/components/sectionSetting.jsx';
 import { Sectionteam } from './pages/Team/components/sectionTeam.jsx';
+<<<<<<< HEAD
 import { SectionSupport } from './pages/Support/components/sectionSupport.jsx';
+=======
+import { MyProvider } from './utils/ContextProvider.jsx';   
+>>>>>>> b67531d50b8e9f5ace5e1e53b5eff9796fb4efba
 
 
 function App() {
@@ -28,8 +32,10 @@ function App() {
                     <Route path='/market' element={<Market />} />
                     <Route path='/people' element={<People />} />
                     <Route path='/profile' element={<Profile />} />
-                    <Route path='/login' element={<LogIn />} />
+                    <Route path='/profile/:idUser' element={<Profile />} />
+                    <Route path='/' element={<LogIn />} />
                     <Route path='/form' element={<Forme />} />
+<<<<<<< HEAD
                     <Route path='/events' element ={< Events />}/> 
                     <Route path='/events2' element ={< Events2 />}/>  
                     <Route path='/setting' element={<SectionSetting />}/>
@@ -44,6 +50,25 @@ function App() {
                 <Route path='/details' element={<Details />} />
                 <Route path='/support' element={<SectionSupport />} />
 
+=======
+                    <Route path='/product/:id' element={<Product />} />
+                    <Route path='/events' element={< Events />} />
+                    <Route path='/events2' element={< Events2 />} />
+                    <Route path='/setting' element={<SectionSetting />} />
+
+                    <Route path='/groups' element={<Group />} />
+                    <Route path='/details' element={<Details />} />
+                    <Route path='/team' element={<Sectionteam />} />
+
+                    <Route path='/groups' element={<Group />} />
+                    <Route path='/details' element={<Details />} />
+
+                    <Route path='/groups' element={<Group />} />
+                    <Route path='/details' element={<Details />} />
+                    <Route path='/team' element={<Sectionteam />} />
+                    <Route path='/groups' element={<Group />} />
+                    <Route path='/details' element={<Details />} />
+>>>>>>> b67531d50b8e9f5ace5e1e53b5eff9796fb4efba
                 </Routes>
             </MyProvider>
         </>
@@ -51,3 +76,5 @@ function App() {
 }
 
 export default App;
+
+

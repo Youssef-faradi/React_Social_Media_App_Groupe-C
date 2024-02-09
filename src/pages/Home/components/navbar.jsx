@@ -2,7 +2,7 @@ import { useContext } from "react"
 import './home.scss'
 
 import { MyContext } from "../../../utils/ContextProvider"
-import React from "react";
+    import React from "react";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
@@ -56,10 +56,12 @@ export const NavbarSectionHome = () => {
                         <div onClick={() => navigate(`/home/${dbUser[0].username}`)} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <RiHome6Line  className="com text-2xl" />
                         </div>
-                        <div onClick={() => navigate("/profile")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+
+                        <div onClick={() => navigate("/people")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <IoIosPeople  className="com text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+
+                        <div onClick={() => navigate("/market")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
                         </div>
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
@@ -83,8 +85,8 @@ export const NavbarSectionHome = () => {
                                 />
                             </DropdownTrigger>
                             <DropdownMenu aria-label="Profile Actions" variant="flat" >
-                                <DropdownItem key="profile" >My Profile</DropdownItem>
-                                <DropdownItem key="settings">My Settings</DropdownItem>
+                                <DropdownItem key="profile" onClick={() => navigate(`/Profile/${dbUser[0].idUser}`)} >My Profile</DropdownItem>
+                                <DropdownItem key="settings" onClick={() => navigate(`/setting`)} >My Settings</DropdownItem>
                                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                                 <DropdownItem key="logout" color="danger"><div className="flex items-center gap-2">
                                     Log Out <FaSignOutAlt className="text-md"/>

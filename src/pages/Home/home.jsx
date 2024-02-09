@@ -3,14 +3,12 @@ import { SidebarSectionHome } from './components/sidebar.jsx'
 import { PostsSectionHome } from './components/posts.jsx'
 import { RightSide } from './components/rightside.jsx'
 import { StoriesSectionHome } from './components/stories.jsx'
-import { FirstSectionHome } from './components/section1.jsx'
 
 
 
 export const Home = () => {
     return (
         <>  
-            <FirstSectionHome/>
             
             
             <NavbarSectionHome/>

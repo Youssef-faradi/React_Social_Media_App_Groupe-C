@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react"
+import productTest from '../assets/images/1.1_1_.jpg';
 import zakaria from "../assets/images/Picsart_22-12-18_00-49-44-927.png";
 import image from "../assets/images/profil.jpg"
 import image1 from "../assets/images/homme1.avif"
@@ -6,7 +7,9 @@ import image1 from "../assets/images/homme1.avif"
 
 export const MyContext = createContext()
 
+
 export const MyProvider = ({ children }) => {
+
 
     // ^ Database of users :
 
@@ -139,50 +142,12 @@ export const MyProvider = ({ children }) => {
     const [products, setProducts] = useState([
 
         {
-            image: "productTest",
+            image: productTest,
             title: 'Jean ZARA',
-            price: 100500 
+            price: 100500 ,
+            description : 'good very cheap ggjhev lqsur nhdjdb' 
         },
-        {
-            image: "productTest",
-            title: 'JEan kora',
-            price: 100500
-        },
-        {
-            image: "productTest",
-            title: 'Jean morocco',
-            price: 100500
-        },
-        {
-            image: "productTest",
-            title: 'Jean youssef',
-            price: 100500
-        },
-        {
-            image: "productTest",
-            title: 'EEEEE',
-            price: 100500
-        },
-        {
-            image: "productTest",
-            title: 'FFFFF',
-            price: 100500
-        },
-        {
-            image: "productTest",
-            title: 'JJJJJ',
-            price: 100500
-        },
-        {
-            image: "productTest",
-            title: 'HHHHH',
-            price: 100500
-        },
-        {
-            image: "productTest",
-            title: 'IIIII',
-            price: 100500
-        }
+
     ])
 
 
