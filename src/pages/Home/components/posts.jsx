@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.scss';
 
-import { MyContext } from "../../../utils/contextProvider"
+import { MyContext } from "../../../utils/ContextProvider"
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegComment } from 'react-icons/fa';

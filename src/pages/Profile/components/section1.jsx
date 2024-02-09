@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { MyContext } from "../../../utils/contextProvider";
+import { MyContext } from "../../../utils/ContextProvider";
 import Card from 'react-bootstrap/Card';
 import "./section1.sass"
 import image from '../../../assets/images/homme1.avif'

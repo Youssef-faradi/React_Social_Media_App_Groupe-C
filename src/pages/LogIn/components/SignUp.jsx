@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { FaApple, FaGoogle, FaFacebook } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { MyContext } from "../../../utils/contextProvider";
+import { MyContext } from "../../../utils/ContextProvider";
 
 
 import img from '../../../assets/images/Default-user-picture.webp'

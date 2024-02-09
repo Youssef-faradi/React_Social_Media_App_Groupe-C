@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import './home.scss'
 
-import { MyContext } from "../../../utils/contextProvider"
+import { MyContext } from "../../../utils/ContextProvider"
     import React from "react";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
@@ -56,9 +56,11 @@ export const NavbarSectionHome = () => {
                         <div onClick={() => navigate(`/home/${dbUser[0].username}`)} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <RiHome6Line  className="com text-2xl" />
                         </div>
-                        <div onClick={() => navigate("/profile")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+
+                        <div onClick={() => navigate("/people")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <IoIosPeople  className="com text-2xl" />
                         </div>
+
                         <div onClick={() => navigate("/market")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
                         </div>
@@ -83,7 +85,7 @@ export const NavbarSectionHome = () => {
                                 />
                             </DropdownTrigger>
                             <DropdownMenu aria-label="Profile Actions" variant="flat" >
-                                <DropdownItem key="profile" >My Profile</DropdownItem>
+                                <DropdownItem key="profile" onClick={() => {}} >My Profile</DropdownItem>
                                 <DropdownItem key="settings">My Settings</DropdownItem>
                                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                                 <DropdownItem key="logout" color="danger"><div className="flex items-center gap-2">

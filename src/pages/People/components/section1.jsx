@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext, useState } from "react";
 import zakaria from "../../../assets/images/Picsart_22-12-18_00-49-44-927.png";
-import { MyContext } from "../../../utils/contextProvider";
+import { MyContext } from "../../../utils/ContextProvider";
 import { element } from "prop-types";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { HiHome } from "react-icons/hi2";

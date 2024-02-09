@@ -5,7 +5,7 @@ import { TbAlertTriangleFilled } from "react-icons/tb";
 
 import { Button, Modal } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
-import { MyContext } from '../../../utils/contextProvider';
+import { MyContext } from '../../../utils/ContextProvider';
 import { element } from 'prop-types';
 import { IconButton } from '@material-tailwind/react';
 import { MdAddShoppingCart } from "react-icons/md";
@@ -76,8 +76,14 @@ export const FirstSectionMarket = () => {
     let filterBySelect = (e) => {
         if (e.target.value != "ALL") {
 
-            let filteredProductNew = products.filter(element => element.categorie == (e.target.value));
-            setFiteredProduct(filteredProductNew)
+            let filteredProductNew = products.filter(element => {
+                if (typeof element.categorie === 'string') {
+                    return element.categorie.toLowerCase() === e.target.value.toLowerCase();
+                }
+                return false;
+            });
+    
+            setFiteredProduct(filteredProductNew);
 
         } else {
             setFiteredProduct(products)
@@ -92,12 +98,12 @@ export const FirstSectionMarket = () => {
     console.log(products);
     return (
         <>
-
-            <body className='h-fit max-[430px]:h-fit bg-white'>
-                <div className='bg-white h-14 flex justify-center items-center border-bottom'>
+            
+            <body className='h-screen  max-[430px]:h-fit bg-[--white] '>
+                <div className='bg-[--white] h-14 flex justify-center items-center border-bottom'>
                     <h4>Product List</h4>
                 </div>
-                <div className=' h-16 flex items-center justify-between px-5  '>
+                <div className=' h-16  flex items-center justify-between px-5  '>
 
                     <button className='rounded-xl bg-[--green] w-28 py-1 shadow' onClick={() => {
                         handleShow();
@@ -113,7 +119,7 @@ export const FirstSectionMarket = () => {
 
                                 <div className="flex1 flex flex-col gap-3">
 
-                                    <div className='flex justify-between'>
+                                    <div className='flex justify-between '>
                                         <div className='flex flex-col  max-[430px]: w-44 '>
                                             <label>
                                                 Product Name :
@@ -139,7 +145,7 @@ export const FirstSectionMarket = () => {
                                     <textarea placeholder='Description / categorie / condition ...'
                                         value={description} onChange={((ev) => setDescription(ev.target.value))} name="" id="" cols="30" rows="10" className="ps-3 sm:w-560 rounded-lg border-gray-300 txt border "></textarea>
 
-                                    <input id="picture" type="file" onChange={handlImgChange} class="flex h-10 items-center justify-center  w-full rounded-md border border-input bg-white px-3  text-sm text-gray-400 file:border-0 file:bg-transparent file:text-gray-600 file:text-sm file:font-medium" />
+                                    <input id="picture" type="file" onChange={handlImgChange} class="flex h-10 items-center justify-center  w-full rounded-md border border-input bg-[--white] px-3  text-sm text-gray-400 file:border-0 file:bg-transparent file:text-gray-600 file:text-sm file:font-medium" />
 
                                 </div>
 
@@ -177,14 +183,14 @@ export const FirstSectionMarket = () => {
 
                     {
                         filteredProduct.map((element, index) =>
-                            <div onClick={() => navigate(`/product/${element.title}`)} key={index} className=' h-80 w-[60%] lg:w-[15%] p-1 text-white  shadow rounded-xl text-center'>
+                            <div  onClick={() => navigate(`/product/${element.title}`)} key={index} className=' bg-[--teal] h-80 w-[60%] lg:w-[15%] p-1 text-white  shadow rounded-xl text-center'>
 
                                 <div className=' h-[70%] rounded-2xl flex justify-center items-center '>
                                     <img className=' h-[90%] w-[90%] ' src={element.image} alt="" />
                                 </div>
 
-                                <h3 className='bg-[--green] rounded-full'>{element.title}</h3>
-                                <h5 className=' bg-[--green] rounded-full opacity-70 text-black flex justify-evenly ps-2 pe-2'>{element.price} <span>DH</span> </h5>
+                                <h3 className='bg-[--teal] shadow rounded-full'>{element.title}</h3>
+                                <h5 className=' bg-[--teal] shadow rounded-full opacity-70 text-black flex justify-evenly ps-2 pe-2'>{element.price} <span>DH</span> </h5>
                             </div>
                         )
                     }
