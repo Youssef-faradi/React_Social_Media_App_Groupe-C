@@ -8,6 +8,7 @@ import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@n
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
 import { IoIosArrowDropdown, IoIosPeople } from "react-icons/io";
 import { LuMessagesSquare } from "react-icons/lu";
+import { HiOutlineRectangleGroup } from "react-icons/hi2";
 
 
 
@@ -65,17 +66,17 @@ export const NavbarSectionHome = () => {
                         <div onClick={() => navigate(`/home/${dbUser[0].username}`)} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <RiHome6Line className="com text-2xl" />
                         </div>
-                        <div onClick={() => navigate("/profile")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
+                        <div onClick={() => navigate("/groups")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <IoIosPeople className="com text-2xl" />
                         </div>
                         <div onClick={() => navigate("/market")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <IoNotifications className="com text-2xl" />
+                        <div onClick={() => navigate("/people")}  className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <HiOutlineRectangleGroup  className="com text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <FaRegCalendarAlt className="com text-2xl" />
+                        <div  onClick={() => navigate("/events")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                            <FaRegCalendarAlt  className="com text-2xl" />
                         </div>
 
 
@@ -91,9 +92,10 @@ export const NavbarSectionHome = () => {
                                 />
                             </DropdownTrigger>
                             <DropdownMenu aria-label="Profile Actions" variant="flat" >
-                                <DropdownItem key="profile" >My Profile</DropdownItem>
-                                <DropdownItem key="settings">My Settings</DropdownItem>
-                                <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+                                <DropdownItem onClick={() => navigate(`/profile/${dbUser[0].username}}`)} key="profile" >My Profile</DropdownItem>
+                                <DropdownItem onClick={() => navigate(`/setting`)} key="settings">My Settings</DropdownItem>
+                                <DropdownItem onClick={() => navigate(`/support`)} key="help_and_feedback">Help & Feedback</DropdownItem>
+                                <DropdownItem onClick={() => navigate(`/team`)} key="Team">Team</DropdownItem>
                                 <DropdownItem onClick={() => {
                                     navigate(`/`)
                                     let newTab = [...dbUser]

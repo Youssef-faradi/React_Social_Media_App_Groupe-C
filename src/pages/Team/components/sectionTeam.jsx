@@ -34,6 +34,7 @@ export const Sectionteam = () => {
   ]);
 
   return (
+    
     <div className="body-team">
       <>
         <link
