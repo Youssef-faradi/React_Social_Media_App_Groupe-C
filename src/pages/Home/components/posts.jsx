@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import './home.scss';
+
+import { MyContext } from "../../../utils/contextProvider"
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegComment } from 'react-icons/fa';
 import { FaRetweet } from "react-icons/fa6";
 import { StoriesSectionHome } from './stories';
-import { MyContext } from "../../../utils/ContextProvider";
 import { element } from "prop-types";
 
 

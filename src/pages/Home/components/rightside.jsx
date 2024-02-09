@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { MyContext } from "../../../utils/ContextProvider"
 import { IoMdAdd } from "react-icons/io";
 import { useNavigate } from 'react-router';
+import { MyContext } from '../../../utils/contextProvider';
 
 
 export const RightSide = () => {

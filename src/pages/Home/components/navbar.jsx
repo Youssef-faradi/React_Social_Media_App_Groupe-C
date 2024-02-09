@@ -1,10 +1,10 @@
 import { useContext, useState } from "react"
 import './home.scss'
 
-import { MyContext } from "../../../utils/ContextProvider"
+import { MyContext } from "../../../utils/contextProvider"
 import React from "react";
-import { FaSearch, FaSignOutAlt, FaRegCalendarAlt } from "react-icons/fa";
-import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { FaRegCalendarAlt, FaSearch, FaSignOutAlt } from "react-icons/fa";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
 import { IoIosArrowDropdown, IoIosPeople } from "react-icons/io";
 import { LuMessagesSquare } from "react-icons/lu";
@@ -68,7 +68,7 @@ export const NavbarSectionHome = () => {
                         <div onClick={() => navigate("/profile")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <IoIosPeople className="com text-2xl" />
                         </div>
-                        <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
+                        <div onClick={() => navigate("/market")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
                         </div>
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">

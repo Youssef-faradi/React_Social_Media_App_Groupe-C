@@ -1,7 +1,10 @@
 import React, { useContext, useState } from "react";
 import { FaApple, FaGoogle, FaFacebook } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { MyContext } from "../../../utils/ContextProvider";
+import { MyContext } from "../../../utils/contextProvider";
+
+
+import img from '../../../assets/images/Default-user-picture.webp'
 
 
 function SignUpForm() {
@@ -38,8 +41,7 @@ function SignUpForm() {
                     full_name: username,
                     birthdate: "**/**/****",
                     registrationDate: today.toLocaleDateString(),
-                    location: "city",
-                    connected : false
+                    location: "city"
                 }
                 
                 newTab.push(user)

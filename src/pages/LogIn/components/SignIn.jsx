@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { FaApple , FaGoogle, FaFacebook} from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
-import { MyContext } from "../../../utils/ContextProvider";
+import { MyContext } from "../../../utils/contextProvider";
 
 function SignInForm() {
     const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes] = useContext(MyContext)

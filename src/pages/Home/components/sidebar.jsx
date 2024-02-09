@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
-import { MyContext } from "../../../utils/ContextProvider"
+import { MyContext } from "../../../utils/contextProvider"
 
 import { IoIosArrowDropdown, IoMdAdd } from "react-icons/io";
 import { FaSignOutAlt,FaRegCalendarAlt  } from "react-icons/fa";
 import { LuMessagesSquare } from "react-icons/lu";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { RiHome6Line } from "react-icons/ri";
-
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
 import { IoIosPeople } from "react-icons/io";
 import { useNavigate } from 'react-router';

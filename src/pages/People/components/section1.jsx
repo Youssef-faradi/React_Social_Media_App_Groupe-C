@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext, useState } from "react";
 import zakaria from "../../../assets/images/Picsart_22-12-18_00-49-44-927.png";
-import { MyContext } from "../../../utils/ContextProvider";
+import { MyContext } from "../../../utils/contextProvider";
 import { element } from "prop-types";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { HiHome } from "react-icons/hi2";
@@ -50,7 +50,7 @@ export const Sectionpeople = () => {
     <>
     
 
-      <div className="">
+      
       <nav>
        <div>
         <div className="fixed h-[10vh] w-[100vw] z-1 flex px-[5%] border-b-1 bg-white">
@@ -148,9 +148,9 @@ export const Sectionpeople = () => {
       </div> 
     </nav>
       
-      </div>
+     
 
-      <div className="flex flex-wrap gap-y-5 pt-[15vh] px-[10px] py-[10px]  bg-gray-200 pt-12">
+      <div className="flex flex-wrap gap-y-5 pt-[15vh] px-[10px] py-[10px]  bg-gray-200">
         
         {/* Card start */}
 
