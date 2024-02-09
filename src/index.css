@@ -18,8 +18,8 @@
 
 }
 .dark{
-    --white: #0a0a0a;
-    --gray: #201f1f;
+    --white:#181717;
+    --gray:  #0a0a0a;
     --dark: white;
     --lighter: #01322f ;
     --light: #8bc4c3 ;

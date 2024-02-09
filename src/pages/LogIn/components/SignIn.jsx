@@ -25,13 +25,12 @@ function SignInForm() {
                 console.log(newTab[connectedUser]);
                 setUserName("")
                 setPassword("")
-
+                newTab[connectedUser].connected=true
                 let usr = newTab.splice(connectedUser,1)
                 newTab.unshift(usr[0])
                 setDbUser(newTab)
                 console.log(newTab)
                 navigate(`/home/${dbUser[0].username}`)
-
                 
             } else {
                 alert("User does not exist in database")

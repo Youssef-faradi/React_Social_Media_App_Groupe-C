@@ -11,18 +11,19 @@ export const MyProvider = ({ children }) => {
     // ^ Database of users :
 
     const [dbUser, setDbUser] = useState([
-        // {
-        //     userId: 0, // premier key
-        //     username: "Achraf GASBI",
-        //     password: "password1",
-        //     email: "user1@gmail.com",
-        //     full_name: " zakaria",
-        //     birthdate: "15/01/2000",
-        //     registrationDate: "02/02/2024", 
-        //     location : "casablanca",
-        //     location : " casablanca" ,
-        //     picture :image1
-        // },
+        {
+            userId: 0, // premier key
+            username: "aaa",
+            password: "aaa",
+            email: "user1@gmail.com",
+            full_name: " zakaria",
+            birthdate: "15/01/2000",
+            registrationDate: "02/02/2024", 
+            location : "casablanca",
+            location : " casablanca" ,
+            picture :image1
+        
+        },
         // {
         //     userId: 0,
         //     username: "user 2",
@@ -85,30 +86,34 @@ export const MyProvider = ({ children }) => {
     // ^ Database of Post :
 
     const [dbPost, setDbPost] = useState([
-        // {
-        //     postId: 0,
-        //     userId: 0,
-        //     content: "descreption du post 1",
-        //     postDate: "01/01/2024",
-        //     privacySetting: "( public, friends only, private)",
-        //     image: image
-        // },
-        // {
-        //     postId: 1,
-        //     userId: 0,
-        //     content: "descreption du post 2",
-        //     postDate: "02/02/2024",
-        //     privacySetting: "( public, friends only, private)",
-        //     image: image
-        // },
-        // {
-        //     postId: 1,
-        //     userId: 0,
-        //     content: "descreption du post 3",
-        //     postDate: "03/03/2024",
-        //     privacySetting: "( public, friends only, private)",
-        //     image: image1
-        // }
+        {
+            postId: 0,
+            username: "aaa",
+            content: "descreption du post 1",
+            postDate: "01/01/2024",
+            privacySetting: "( public, friends only, private)",
+            image: "https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg",
+            likes: 20,
+            likecheck : false
+        },
+        {
+            postId: 1,
+            username: 2,
+            content: "descreption du post 2",
+            postDate: "02/02/2024",
+            privacySetting: "( public, friends only, private)",
+            image: "https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg",
+            likes: 10
+        },
+        {
+            postId: 1,
+            username: 3,
+            content: "descreption du post 3",
+            postDate: "03/03/2024",
+            privacySetting: "( public, friends only, private)",
+            image: "https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg",
+            likes: 30
+        }
     ])
 
     // ^ Database of Coments :

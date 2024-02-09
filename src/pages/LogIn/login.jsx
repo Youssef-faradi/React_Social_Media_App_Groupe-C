@@ -23,11 +23,17 @@ export const LogIn = () => {
     // };
     const [flip, setFlip] = useState(false);
 
+    const [divClassName, setDivClassName] = useState('');
+
+    const darkModeToggle = () => {
+        setDivClassName(prevClassName => prevClassName === 'dark' ? '' : 'dark');
+    };
+
     return (
 
-        <div className="dark bg-[--white] loginPage ">
-            <div className="dark darkMode bg-[--light] absolute z-10 top-[20%] shadow right-[20.5%] rounded-e-full px-1 pe-2 max-[430px]:right-1  max-[430px]:rounded  ">
-                <label className="theme-switch mt-2">
+        <div className={`${divClassName} bg-[--white] loginPage `}>
+            <div className=" darkMode bg-[--light] absolute z-10 top-[20%] shadow right-[20.5%] rounded-e-full px-1 pe-2 max-[430px]:right-1  max-[430px]:rounded  ">
+                <label  onChange={darkModeToggle}  className="theme-switch mt-2">
                     <input type="checkbox" className="theme-switch__checkbox" />
                     <div className="theme-switch__container">
                         <div className="theme-switch__clouds"></div>
@@ -48,7 +54,7 @@ export const LogIn = () => {
                     </div>
                 </label>
             </div>
-            <div className="App dark z-0 ">
+            <div className="App  z-0 ">
                 <div className={containerClass} id="container">
                     <div className="signBtns absolute hidden z-10 h-[15%] " >
                         <button id="signIn" onClick={() => handleOnClick("signIn")} >Sign in</button>

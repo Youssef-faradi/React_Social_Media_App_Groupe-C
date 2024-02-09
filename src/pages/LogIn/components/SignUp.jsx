@@ -38,7 +38,8 @@ function SignUpForm() {
                     full_name: username,
                     birthdate: "**/**/****",
                     registrationDate: today.toLocaleDateString(),
-                    location: "city"
+                    location: "city",
+                    connected : false
                 }
                 
                 newTab.push(user)

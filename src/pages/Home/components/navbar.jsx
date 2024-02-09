@@ -1,10 +1,10 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import './home.scss'
 
 import { MyContext } from "../../../utils/ContextProvider"
 import React from "react";
-import { FaSearch, FaSignOutAlt } from "react-icons/fa";
-import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
+import { FaSearch, FaSignOutAlt, FaRegCalendarAlt } from "react-icons/fa";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import { IoStorefrontSharp, IoNotifications } from "react-icons/io5";
 import { IoIosArrowDropdown, IoIosPeople } from "react-icons/io";
 import { LuMessagesSquare } from "react-icons/lu";
@@ -15,23 +15,32 @@ import { IoMdLogOut } from "react-icons/io";
 import { RiHome6Line } from "react-icons/ri";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+import { element } from "prop-types";
 
 export const NavbarSectionHome = () => {
     const [dbUser, setDbUser, dbFriendship, setDbFriendship, dbPost, setDbPost, dbComments, setDbComments, dbLikes, setDbLikes] = useContext(MyContext)
     const navigate = useNavigate()
+
+    const [divClassName, setDivClassName] = useState('');
+
+    const darkModeToggle = () => {
+        setDivClassName(prevClassName => prevClassName === 'dark' ? '' : 'dark');
+    };
+    
+
     return (
         <>
-            <div className="dark  fixed h-[10vh] w-[100vw] z-1 flex px-[5%]  bg-[--white]">
-                <div className="max-[430px]:w-[40%] w-[25%] h-[100%] flex items-center justify-center">
+            <div className="fixed dark h-[10vh] w-[100vw] z-1 flex px-[5%]  bg-[--white]">
+                <div onClick={() => navigate(`/Home/${dbUser[0].username}`)} className="max-[430px]:w-[40%] w-[25%] h-[100%] flex items-center justify-center">
                     <h3 className="text-[--teal]  font-bold font-serif ">Zay<span className="text-[--dark]">Mas</span>.</h3>
                 </div>
                 <div className=" flex w-[70%] h-[100%] gap-5 items-center text-black" >
                     <div className="max-[430px]:w-[100%] h-[100%] relative flex items-center gap-3  w-[40%]">
                         <input type="search" className="max-[430px]:hidden  rounded-md pe-3 ps-5 h-[50%] w-[80%] bg-gray-200 focus:outline-none" placeholder="Type To Search" />
                         <FaSearch className="max-[430px]:left-[50%]  absolute top-[50%] translate-y-[-50%] text-gray-400 left-3" />
-                        <div className=" max-[430px]:w-[90%] DarkMode w-[20%]  flex justify-end ">
-                            <label className="theme-switch">
-                                <input type="checkbox" className="theme-switch__checkbox" />
+                        <div className="max-[430px]:w-[90%] DarkMode w-[20%]  flex justify-end ">
+                            <label onChange={darkModeToggle} className="theme-switch ">
+                                <input type="checkbox" className="theme-switch__checkbox" checked="true"/>
                                 <div className="theme-switch__container">
                                     <div className="theme-switch__clouds"></div>
                                     <div className="theme-switch__stars-container">
@@ -54,10 +63,10 @@ export const NavbarSectionHome = () => {
                     </div>
                     <div className="max-[430px]:hidden   h-[80%] flex items-center  w-[55%] gap-5">
                         <div onClick={() => navigate(`/home/${dbUser[0].username}`)} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <RiHome6Line  className="com text-2xl" />
+                            <RiHome6Line className="com text-2xl" />
                         </div>
                         <div onClick={() => navigate("/profile")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
-                            <IoIosPeople  className="com text-2xl" />
+                            <IoIosPeople className="com text-2xl" />
                         </div>
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
@@ -66,28 +75,32 @@ export const NavbarSectionHome = () => {
                             <IoNotifications className="com text-2xl" />
                         </div>
                         <div className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
-                            <LuMessagesSquare className="com text-2xl" />
+                            <FaRegCalendarAlt className="com text-2xl" />
                         </div>
-                        
-                        
+
+
                         <Dropdown placement="bottom-end">
                             <DropdownTrigger>
                                 <Avatar
-                                    isBordered
                                     as="button"
-                                    className="transition-transform"
-                                    color="secondary"
-                                    name="Jason Hughes"
-                                    size="sm"
-                                    src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                                    className="w-[9%] h-[80%] transition-transform border-2 border-[--teal]"
+                                    color="default"
+                                    size="md"
+
+                                    src={element.picture}
                                 />
                             </DropdownTrigger>
                             <DropdownMenu aria-label="Profile Actions" variant="flat" >
                                 <DropdownItem key="profile" >My Profile</DropdownItem>
                                 <DropdownItem key="settings">My Settings</DropdownItem>
                                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-                                <DropdownItem key="logout" color="danger"><div className="flex items-center gap-2">
-                                    Log Out <FaSignOutAlt className="text-md"/>
+                                <DropdownItem onClick={() => {
+                                    navigate(`/`)
+                                    let newTab = [...dbUser]
+                                    newTab[0].connected = false
+                                    setDbUser(newTab)
+                                }} key="logout" color="danger"><div className="flex items-center gap-2">
+                                        Log Out <FaSignOutAlt className="text-md" />
                                     </div></DropdownItem>
                             </DropdownMenu>
                         </Dropdown>

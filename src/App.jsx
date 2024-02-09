@@ -22,11 +22,12 @@ function App() {
             <MyProvider>
                 <Routes>
                     <Route path='/*' element={<Error />} />
+                
                     <Route path='/home/:id' element={<Home />} />
                     <Route path='/market' element={<Market />} />
                     <Route path='/people' element={<People />} />
                     <Route path='/profile' element={<Profile />} />
-                    <Route path='/login' element={<LogIn />} />
+                    <Route path='/' element={<LogIn />} />
                     <Route path='/form' element={<Forme />} />
                     <Route path='/events' element ={< Events />}/> 
                     <Route path='/events2' element ={< Events2 />}/>  
