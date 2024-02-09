@@ -46,10 +46,10 @@ export const PostsSectionHome = () => {
     }
     return (
         <>
-            <div className='bg-[--lighter] dark max-[430px]:w-[100vw] max-[430px]:ms-0 ms-[22.5vw]  min-h-[100vh]  w-[53vw] flex flex-wrap justify-center gap-3'>
+            <div className='bg-[--lighter]  max-[430px]:w-[100vw] max-[430px]:ms-0 ms-[22.5vw]  min-h-[100vh]  w-[53vw] flex flex-wrap justify-center gap-3'>
                 {/* <StoriesSectionHome /> */}
                 {dbPost.map((element, index) =>
-                    <div key={index} className='dark  text-[--dark] max-[430px]:w-[90%] w-[80%] h-[110vh] rounded-md shadow-xl bg-[--white] px-[4%] pt-[4%] flex flex-col gap-4'>
+                    <div key={index} className='  text-[--dark] max-[430px]:w-[90%] w-[80%] h-[110vh] rounded-md shadow-xl bg-[--white] px-[4%] pt-[4%] flex flex-col gap-4'>
                         <div className='flex w-[100%] h-[9%] '>
                             <div className='flex gap-2  w-[80%] max-h-[10vh]'>
                                 <img className='post-profile rounded-2xl h-[80%] w-[15%]' src="https://i.pinimg.com/564x/0e/a3/cb/0ea3cbab484e3f4bfcd1faf2b3532039.jpg" alt="." />

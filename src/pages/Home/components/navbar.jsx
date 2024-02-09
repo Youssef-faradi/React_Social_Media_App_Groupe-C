@@ -31,7 +31,7 @@ export const NavbarSectionHome = () => {
 
     return (
         <>
-            <div className="fixed dark h-[10vh] w-[100vw] z-1 flex px-[5%]  bg-[--white]">
+            <div className="fixed  h-[10vh] w-[100vw] z-1 flex px-[5%]  bg-[--white]">
                 <div onClick={() => navigate(`/Home/${dbUser[0].username}`)} className="max-[430px]:w-[40%] w-[25%] h-[100%] flex items-center justify-center">
                     <h3 className="text-[--teal]  font-bold font-serif ">Zay<span className="text-[--dark]">Mas</span>.</h3>
                 </div>
@@ -41,7 +41,7 @@ export const NavbarSectionHome = () => {
                         <FaSearch className="max-[430px]:left-[50%]  absolute top-[50%] translate-y-[-50%] text-gray-400 left-3" />
                         <div className="max-[430px]:w-[90%] DarkMode w-[20%]  flex justify-end ">
                             <label onChange={darkModeToggle} className="theme-switch ">
-                                <input type="checkbox" className="theme-switch__checkbox" checked="true"/>
+                                <input type="checkbox" className="theme-switch__checkbox" />
                                 <div className="theme-switch__container">
                                     <div className="theme-switch__clouds"></div>
                                     <div className="theme-switch__stars-container">

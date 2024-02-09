@@ -28,7 +28,7 @@ export const Home = () => {
             
             
             <NavbarSectionHome  />
-            <div className='dark bg-[--lighter] h-[15vh] max-[430px]:h-[10vh]'>
+            <div className=' bg-[--lighter] h-[15vh] max-[430px]:h-[10vh]'>
                 
             </div>
             <SidebarSectionHome />

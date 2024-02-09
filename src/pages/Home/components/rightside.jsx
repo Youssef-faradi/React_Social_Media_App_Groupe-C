@@ -11,7 +11,7 @@ export const RightSide = () => {
 
     return (
         <>
-            <div className='dark text-[--dark] bg-[--gray] friendsRequest max-[430px]:hidden z-3 fixed px-3 right-0 pt-[2%] top-[10vh] flex flex-wrap gap-3  w-[23.5vw] h-[90vh] overflow-y-scroll   [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'>
+            <div className=' text-[--dark] bg-[--gray] friendsRequest max-[430px]:hidden z-3 fixed px-3 right-0 pt-[2%] top-[10vh] flex flex-wrap gap-3  w-[23.5vw] h-[90vh] overflow-y-scroll   [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'>
                 <div className=' bg-[--white] shadow w-[85%] h-fit rounded-xl py-[5%] px-[5%]'>
                     <h4>Friends Requeste</h4>
                     <div className='w-[100%] h-[80%] overflow-hidden'>
