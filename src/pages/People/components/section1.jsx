@@ -51,9 +51,10 @@ export const Sectionpeople = () => {
     <>
     
 
-    
-      <NavbarSectionHome />
-     
+    <NavbarSectionHome/>
+
+
+      
 
       <div className="flex flex-wrap gap-y-5 pt-[15vh] px-[10px] py-[10px]  bg-gray-200">
         

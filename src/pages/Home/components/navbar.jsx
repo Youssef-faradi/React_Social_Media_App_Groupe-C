@@ -69,6 +69,7 @@ export const NavbarSectionHome = () => {
                         <div onClick={() => navigate("/groups")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all ">
                             <IoIosPeople className="com text-2xl" />
                         </div>
+
                         <div onClick={() => navigate("/market")} className="comment p-2 bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all">
                             <HiOutlineShoppingCart className="com text-2xl" />
                         </div>

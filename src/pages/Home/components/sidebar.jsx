@@ -17,6 +17,9 @@ export const SidebarSectionHome = () => {
     const navigate = useNavigate()
 
     return (
+
+
+
         <>
             <div className='dark max-[430px]:justify-center  max-[430px]:bg-[--white]   max-[430px]:h-[10vh] max-[430px]:p-0  max-[430px]:w-[100vw] position-fixed ps-[3%] z-3 fixed  min-[430px]:top-[10vh]  items-center bottom-0 bg-[--gray]  left-0  flex flex-wrap gap-5 justify-center w-[22.5vw] h-[90vh] '>
                 <div className='bg-[--white] max-[430px]:bg-[--gray]  flex flex-col gap-3 max-[430px]:w-[100%]  max-[430px]:px-0 max-[425px]:shadow-none shadow rounded-xl w-[85%] h-[90%] pt-[5%] px-[13%]'>
@@ -32,6 +35,7 @@ export const SidebarSectionHome = () => {
                                 <RiHome6Line onClick={() => navigate(`/Home/${dbUser[0].username}`)} className="max-[430px]:text-4xl text-5xl p-2  bg-[--light] rounded-xl hover:text-[--teal] hover:bg-[--lightGreen]  hover:translate-y-[-4px] hover:transition-all" />
                                 <p className='max-[430px]:hidden font-medium text-[--dark] pt-2'>Home</p>
                             </div>
+
                         </li>
                         <li className='h-[100%] '>
                             <div className='flex h-[100%] gap-3 items-center'>
