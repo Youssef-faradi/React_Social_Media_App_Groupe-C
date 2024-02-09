@@ -1,32 +1,62 @@
 import React, { useState } from "react";
 import "./sectionTeam.css";
 import zakaria from "../../../assets/images/Picsart_22-12-18_00-49-44-927.png";
+import saad from "../../../assets/images/saaad.jpg"
+import achraf from "../../../assets/images/achraff.jpg"
+import harkas from "../../../assets/images/harkass.jpg"
+import amine from "../../../assets/images/aminne.png"
+import ysf from "../../../assets/images/ysfff.jpg"
+
+
+
+
 
 export const Sectionteam = () => {
   const [MyTeam, setMyteam] = useState([
     {
-      full_name: " zakaria",
+      full_name: "Youssef",
       job: "manager",
-      images: zakaria,
+      images:ysf ,
     },
 
     {
-        full_name: " zakaria",
+        full_name: "Achraf",
+        job: "manager",
+        images: achraf,
+      },
+
+      {
+        full_name: "zakaria",
         job: "manager",
         images: zakaria,
       },
 
       {
-        full_name: " zakaria",
+        full_name: "Saad",
         job: "manager",
-        images: zakaria,
+        images: saad,
       },
 
       {
-        full_name: " zakaria",
+        full_name: "Mourad",
         job: "manager",
-        images: zakaria,
+        images: harkas,
       },
+
+      {
+        full_name: "Amine",
+        job: "manager",
+        images: amine,
+      },
+  
+  
+  
+  
+  
+
+    
+
+
 
 
 
@@ -34,7 +64,7 @@ export const Sectionteam = () => {
   ]);
 
   return (
-    <div className="body-team">
+    <div className="body-team ">
       <>
         <link
           rel="stylesheet"
@@ -42,7 +72,7 @@ export const Sectionteam = () => {
           integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc="
           crossOrigin="anonymous"
         />
-        <div className="container bootdey">
+        <div className="container bootdey bg-[--white] ">
           <div className="row">
             <div className="col-12 text-center">
               <div className="section-title mb-4 pb-2">
@@ -61,7 +91,7 @@ export const Sectionteam = () => {
               <div className="col-lg-3 col-md-6 col-12 mt-4 pt-2" key={index}>
                 <div className="team text-center rounded p-3 py-4">
                   <img
-                    src={zakaria}
+                    src={element.images}
                     className="img-fluid avatar avatar-medium shadow rounded-pill"
                     alt=""
                   />
@@ -76,7 +106,7 @@ export const Sectionteam = () => {
                       </li>
                       <li className="list-inline-item">
                         <a href="javascript:void(0)" className="rounded">
-                          <i  className="mdi mdi-instagram" title="Instagram" />
+                          <i className="mdi mdi-instagram" title="Instagram" />
                         </a>
                       </li>
                       <li className="list-inline-item">

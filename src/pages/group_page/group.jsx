@@ -138,14 +138,6 @@ export const Group = () => {
                 </div>
 
 
-
-
-
-
-
-
-
-
          
             </div>
 
